@@ -37,7 +37,10 @@
   };
 
   cards.forEach((card) => {
-    card.querySelector(".post-image").addEventListener("click", () => openPost(card));
+    const image = card.querySelector(".post-image");
+    if (image) {
+      image.addEventListener("click", () => openPost(card));
+    }
     card.querySelector(".post-open").addEventListener("click", () => openPost(card));
   });
   document.querySelector("#modal-close").addEventListener("click", closePost);
