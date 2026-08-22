@@ -3,89 +3,125 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard - Welcome</title>
+    <title>Dashboard & Live-Chat</title>
     <link rel="stylesheet" type="text/css" href="./style.css" />
     <script
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
-    <style>
-      /* Additional dashboard-specific styles to complement style.css */
-      .dashboard-card {
-        background-color: var(--field);
-        border: 1px solid var(--accent);
-        border-radius: 20px;
-        padding: 40px;
-        max-width: 500px;
-        width: 90%;
-        text-align: center;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        z-index: 10;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        color: var(--text);
-      }
-
-      .dashboard-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        width: 100%;
-        background-color: var(--surface);
-      }
-
-      .user-avatar {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        background-color: var(--accent);
-        color: var(--button-text);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 3rem;
-        margin-bottom: 10px;
-        font-weight: 700;
-        text-transform: uppercase;
-      }
-
-      .dashboard-title {
-        font-size: 2rem;
-        font-weight: 700;
-        margin-bottom: 5px;
-      }
-
-      .dashboard-subtitle {
-        color: var(--muted);
-        font-size: 1rem;
-        margin-bottom: 20px;
-      }
-
-      /* Reuse .btn style from style.css */
-      .logout-btn {
-        margin-top: 10px;
-      }
-    </style>
   </head>
   <body>
-    <div class="container dashboard-container">
-      <div class="dashboard-card">
-        <div class="user-avatar" id="user-initials">-</div>
-        <h1 class="dashboard-title">Willkommen!</h1>
-        <p class="dashboard-subtitle" id="welcome-user">Lade Profil...</p>
-        <button class="btn logout-btn" id="logout-btn">
-          <i class="fas fa-sign-out-alt"></i> Abmelden
-        </button>
+    <div class="container">
+      
+      <!-- Top Navigation Header -->
+      <header class="dashboard-header">
+        <div class="logo-area">
+          <i class="fas fa-comments"></i>
+          <h2>ChatRoom</h2>
+        </div>
+        
+        <!-- User Avatar Menu Dropdown -->
+        <div class="profile-menu-container">
+          <button class="profile-trigger-btn" id="profile-trigger">
+            <span class="user-nav-name" id="nav-username">Lade...</span>
+            <div class="user-nav-avatar" id="nav-avatar">-</div>
+          </button>
+          
+          <div class="dropdown-menu" id="dropdown-menu">
+            <button id="edit-profile-opt">
+              <i class="fas fa-user-edit"></i> Profil bearbeiten
+            </button>
+            <button id="logout-btn">
+              <i class="fas fa-sign-out-alt"></i> Abmelden
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Panel Views -->
+      <main class="dashboard-views">
+        
+        <!-- 1. Landing Panel (Welcome Card) -->
+        <section class="dashboard-panel active" id="landing-panel">
+          <div class="welcome-card">
+            <div class="welcome-avatar-large" id="welcome-avatar-large">-</div>
+            <h1 id="welcome-title">Willkommen!</h1>
+            <p>Bereit für eine Unterhaltung? Tritt dem globalen Live-Chat bei, um dich in Echtzeit mit allen angemeldeten Usern auszutauschen.</p>
+            <button class="btn chat-enter-btn" id="enter-chat-btn">
+              <i class="fas fa-arrow-right"></i> Zum Chat-Room
+            </button>
+          </div>
+        </section>
+
+        <!-- 2. Real-time Chat Panel -->
+        <section class="dashboard-panel" id="chat-panel">
+          <div class="chat-box-container">
+            <div class="chat-header">
+              <button class="chat-back-btn" id="chat-back-btn">
+                <i class="fas fa-arrow-left"></i> Zurück
+              </button>
+              <div class="chat-header-info">
+                <h3>Globaler Chat-Room</h3>
+              </div>
+            </div>
+            
+            <div class="chat-messages" id="chat-messages">
+              <!-- Dynamically populated real-time messages -->
+            </div>
+            
+            <div class="chat-footer">
+              <form class="chat-input-form" id="chat-form">
+                <input
+                  type="text"
+                  class="chat-input-field"
+                  id="chat-input"
+                  placeholder="Schreibe eine Nachricht..."
+                  required
+                  autocomplete="off"
+                />
+                <button type="submit" class="btn chat-send-btn">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- 3. Edit Profile Modal Dialog -->
+      <div class="modal-overlay" id="profile-modal">
+        <div class="modal-box">
+          <div class="modal-header">
+            <h3>Profil bearbeiten</h3>
+            <button class="modal-close-btn" id="modal-close-btn">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="profile-name-input">Anzeigename</label>
+              <input type="text" id="profile-name-input" placeholder="Dein Name" required />
+            </div>
+            <div class="form-group">
+              <label for="profile-avatar-input">Profilbild-URL</label>
+              <input type="url" id="profile-avatar-input" placeholder="https://example.com/avatar.jpg" />
+            </div>
+            <div class="modal-actions">
+              <button class="btn btn-secondary" id="modal-cancel-btn">Abbrechen</button>
+              <button class="btn" id="modal-save-btn">Speichern</button>
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
 
-    <!-- Firebase Script and Logic -->
+    <!-- Firebase Script Logic -->
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
-      import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+      import { getAuth, onAuthStateChanged, signOut, updateProfile } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+      import { getFirestore, doc, getDoc, setDoc, collection, addDoc, query, orderBy, limit, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 
       const firebaseConfig = {
         apiKey: "AIzaSyBU7Bs4P7M_kTkc2bs0rWnjEClQhFUHVrg",
@@ -97,52 +133,294 @@
         measurementId: "G-6JL362S1PC"
       };
 
+      // Initialize Firebase & Services
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
+      const db = getFirestore(app);
 
       // DOM Elements
-      const welcomeUser = document.getElementById("welcome-user");
-      const userInitials = document.getElementById("user-initials");
-      const logoutBtn = document.getElementById("logout-btn");
       const containerElement = document.querySelector(".container");
+      const navUsername = document.getElementById("nav-username");
+      const navAvatar = document.getElementById("nav-avatar");
+      const welcomeTitle = document.getElementById("welcome-title");
+      const welcomeAvatarLarge = document.getElementById("welcome-avatar-large");
+      const profileTrigger = document.getElementById("profile-trigger");
+      const dropdownMenu = document.getElementById("dropdown-menu");
+      const editProfileOpt = document.getElementById("edit-profile-opt");
+      const logoutBtn = document.getElementById("logout-btn");
+      
+      const landingPanel = document.getElementById("landing-panel");
+      const chatPanel = document.getElementById("chat-panel");
+      const enterChatBtn = document.getElementById("enter-chat-btn");
+      const chatBackBtn = document.getElementById("chat-back-btn");
+      
+      const chatMessages = document.getElementById("chat-messages");
+      const chatForm = document.getElementById("chat-form");
+      const chatInput = document.getElementById("chat-input");
+
+      const profileModal = document.getElementById("profile-modal");
+      const modalCloseBtn = document.getElementById("modal-close-btn");
+      const modalCancelBtn = document.getElementById("modal-cancel-btn");
+      const modalSaveBtn = document.getElementById("modal-save-btn");
+      const profileNameInput = document.getElementById("profile-name-input");
+      const profileAvatarInput = document.getElementById("profile-avatar-input");
+
+      let currentUser = null;
+      let unsubscribeChat = null;
 
       // Apply saved theme automatically
       const savedTheme = localStorage.getItem("login-page-theme");
       if (savedTheme) {
         containerElement.classList.add(savedTheme);
+        // Add dark-hover styling to nav trigger if it's a light theme
+        if (savedTheme !== "theme-red-black") {
+          profileTrigger.classList.add("dark-hover");
+        }
       } else {
         containerElement.classList.add("theme-red-black");
       }
 
-      // Check auth state
-      onAuthStateChanged(auth, (user) => {
-        if (user) {
-          // User is signed in
-          const displayName = user.displayName || "Benutzer";
-          const email = user.email;
-          
-          welcomeUser.innerHTML = `Hallo, <strong>${displayName}</strong>!<br><span style="font-size: 0.85rem; font-weight: normal; color: var(--muted);">${email}</span>`;
-          
-          // Generate initials for avatar
-          const initial = displayName.trim().charAt(0).toUpperCase();
-          userInitials.textContent = initial;
+      // 1. Fetch profile details from Firestore and update UI
+      async function updateUserInfoUI(user) {
+        let displayName = user.displayName || "Benutzer";
+        let photoURL = user.photoURL || "";
+
+        try {
+          const userDocRef = doc(db, "users", user.uid);
+          const userSnap = await getDoc(userDocRef);
+          if (userSnap.exists()) {
+            const userData = userSnap.data();
+            displayName = userData.displayName || displayName;
+            photoURL = userData.photoURL || photoURL;
+          }
+        } catch (error) {
+          console.error("Fehler beim Laden des Profils aus Firestore:", error);
+        }
+
+        // Update Nav
+        navUsername.textContent = displayName;
+        if (photoURL) {
+          navAvatar.innerHTML = `<img src="${photoURL}" alt="avatar" />`;
         } else {
-          // No user is signed in, redirect to index.html
+          navAvatar.textContent = displayName.charAt(0).toUpperCase();
+          navAvatar.innerHTML = displayName.charAt(0).toUpperCase();
+        }
+
+        // Update Landing panel welcome card
+        welcomeTitle.textContent = `Willkommen zurück, ${displayName}!`;
+        if (photoURL) {
+          welcomeAvatarLarge.innerHTML = `<img src="${photoURL}" alt="avatar" />`;
+        } else {
+          welcomeAvatarLarge.textContent = displayName.charAt(0).toUpperCase();
+          welcomeAvatarLarge.innerHTML = displayName.charAt(0).toUpperCase();
+        }
+      }
+
+      // Monitor Auth State
+      onAuthStateChanged(auth, async (user) => {
+        if (user) {
+          currentUser = user;
+          await updateUserInfoUI(user);
+        } else {
+          // Unsubscribe chat listener if active
+          if (unsubscribeChat) {
+            unsubscribeChat();
+            unsubscribeChat = null;
+          }
           window.location.href = "index.html";
         }
       });
 
-      // Logout handler
+      // 2. Dropdown Menu Toggle
+      profileTrigger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        dropdownMenu.classList.toggle("show");
+      });
+
+      document.addEventListener("click", () => {
+        dropdownMenu.classList.remove("show");
+      });
+
+      // 3. Edit Profile Modal Events
+      editProfileOpt.addEventListener("click", () => {
+        profileNameInput.value = currentUser.displayName || "";
+        profileAvatarInput.value = currentUser.photoURL || "";
+        profileModal.classList.add("show");
+      });
+
+      const closeModal = () => {
+        profileModal.classList.remove("show");
+      };
+
+      modalCloseBtn.addEventListener("click", closeModal);
+      modalCancelBtn.addEventListener("click", closeModal);
+
+      modalSaveBtn.addEventListener("click", async () => {
+        const name = profileNameInput.value.trim();
+        const avatarUrl = profileAvatarInput.value.trim();
+
+        if (!name) {
+          alert("Bitte gib einen Anzeigenamen ein.");
+          return;
+        }
+
+        try {
+          // Update Firebase Auth profile
+          await updateProfile(currentUser, {
+            displayName: name,
+            photoURL: avatarUrl
+          });
+
+          // Save profile to Firestore
+          const userDocRef = doc(db, "users", currentUser.uid);
+          await setDoc(userDocRef, {
+            displayName: name,
+            photoURL: avatarUrl,
+            updatedAt: serverTimestamp()
+          }, { merge: true });
+
+          await updateUserInfoUI(currentUser);
+          closeModal();
+        } catch (error) {
+          console.error("Fehler beim Speichern des Profils:", error);
+          alert("Profil konnte nicht gespeichert werden.");
+        }
+      });
+
+      // 4. Panel Switching (Landing <=> Chat)
+      enterChatBtn.addEventListener("click", () => {
+        landingPanel.classList.remove("active");
+        chatPanel.classList.add("active");
+        startChatListener();
+      });
+
+      chatBackBtn.addEventListener("click", () => {
+        chatPanel.classList.remove("active");
+        landingPanel.classList.add("active");
+      });
+
+      // 5. Live Chat Real-Time Updates
+      function startChatListener() {
+        if (unsubscribeChat) return;
+
+        const q = query(
+          collection(db, "messages"),
+          orderBy("createdAt", "asc"),
+          limit(100)
+        );
+
+        unsubscribeChat = onSnapshot(q, (snapshot) => {
+          chatMessages.innerHTML = "";
+          
+          snapshot.forEach((docSnap) => {
+            const data = docSnap.data();
+            const bubble = createMessageBubble(data);
+            chatMessages.appendChild(bubble);
+          });
+          
+          // Scroll smoothly to bottom
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        });
+      }
+
+      function createMessageBubble(data) {
+        const isOutgoing = data.uid === currentUser.uid;
+        
+        const bubble = document.createElement("div");
+        bubble.className = `message-bubble ${isOutgoing ? 'outgoing' : 'incoming'}`;
+
+        // Avatar
+        const avatar = document.createElement("div");
+        avatar.className = "msg-avatar";
+        if (data.photoURL) {
+          avatar.innerHTML = `<img src="${data.photoURL}" alt="avatar" />`;
+        } else {
+          avatar.textContent = (data.displayName || "B").charAt(0).toUpperCase();
+        }
+
+        // Wrapper
+        const wrapper = document.createElement("div");
+        wrapper.className = "msg-content-wrapper";
+
+        // Meta (Name and Time)
+        const meta = document.createElement("div");
+        meta.className = "msg-meta";
+
+        const senderName = document.createElement("span");
+        senderName.className = "msg-sender";
+        senderName.textContent = isOutgoing ? "Du" : (data.displayName || "Anonym");
+        meta.appendChild(senderName);
+
+        if (data.createdAt) {
+          const timeSpan = document.createElement("span");
+          timeSpan.className = "msg-time";
+          const date = data.createdAt.toDate ? data.createdAt.toDate() : new Date(data.createdAt);
+          timeSpan.textContent = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+          meta.appendChild(timeSpan);
+        }
+
+        wrapper.appendChild(meta);
+
+        // Msg Text
+        const msgBody = document.createElement("div");
+        msgBody.className = "msg-body";
+        msgBody.textContent = data.text;
+        wrapper.appendChild(msgBody);
+
+        bubble.appendChild(avatar);
+        bubble.appendChild(wrapper);
+
+        return bubble;
+      }
+
+      // 6. Submit chat messages
+      chatForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        
+        const text = chatInput.value.trim();
+        if (!text) return;
+
+        // Clear input early for rapid typing feel
+        chatInput.value = "";
+
+        try {
+          // Fetch current profile to ensure it is always fresh in messages
+          const userDocRef = doc(db, "users", currentUser.uid);
+          const userSnap = await getDoc(userDocRef);
+          let displayName = currentUser.displayName || "Benutzer";
+          let photoURL = currentUser.photoURL || "";
+
+          if (userSnap.exists()) {
+            const userData = userSnap.data();
+            displayName = userData.displayName || displayName;
+            photoURL = userData.photoURL || photoURL;
+          }
+
+          // Add to firestore collection
+          await addDoc(collection(db, "messages"), {
+            text: text,
+            uid: currentUser.uid,
+            displayName: displayName,
+            photoURL: photoURL,
+            createdAt: serverTimestamp()
+          });
+
+        } catch (error) {
+          console.error("Fehler beim Senden der Nachricht:", error);
+          alert("Fehler beim Senden der Nachricht.");
+        }
+      });
+
+      // 7. Logout Handler
       logoutBtn.addEventListener("click", () => {
         signOut(auth)
           .then(() => {
             window.location.href = "index.html";
           })
           .catch((error) => {
-            console.error("Sign Out Error", error);
+            console.error("Sign Out Error:", error);
           });
       });
     </script>
   </body>
 </html>
-
