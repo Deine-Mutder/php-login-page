@@ -51,6 +51,14 @@ input {
   display: none;
 }
 
+.dashboard-page {
+  background-color: #14120f;
+  background-image: linear-gradient(180deg, rgba(13, 16, 16, 0.32), rgba(13, 16, 16, 0.2) 42%, rgba(13, 16, 16, 0.62)), url("./img/aurora-nova.svg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .forms-container {
   position: absolute;
   width: 100%;
@@ -245,7 +253,7 @@ form.sign-in-form {
   right: 2rem;
   bottom: 2rem;
   z-index: 20;
-  display: flex;
+  display: none;
   align-items: center;
   visibility: visible;
   transition: opacity 0.8s ease, visibility 0s linear, transform 0.45s ease;
@@ -613,15 +621,17 @@ form.sign-in-form {
 
 /* Modern Toast Colors */
 .toast-notification.success {
-  background-color: #d1e7dd;
-  color: #0f5132;
-  border-left: 5px solid #198754;
+  background-color: rgba(22, 138, 66, 0.94);
+  color: #ffffff;
+  border-left: 5px solid #62e58d;
+  box-shadow: 0 8px 25px rgba(5, 55, 24, 0.35);
 }
 
 .toast-notification.error {
-  background-color: #f8d7da;
-  color: #842029;
-  border-left: 5px solid #dc3545;
+  background-color: rgba(194, 35, 47, 0.95);
+  color: #ffffff;
+  border-left: 5px solid #ff737d;
+  box-shadow: 0 8px 25px rgba(90, 8, 15, 0.35);
 }
 
 /* Inline Form Messages */
@@ -653,15 +663,15 @@ form.sign-in-form {
 }
 
 .form-message.success {
-  background-color: #d1e7dd;
-  color: #0f5132;
-  border-color: #198754;
+  background-color: rgba(22, 138, 66, 0.9);
+  color: #ffffff;
+  border-color: #62e58d;
 }
 
 .form-message.error {
-  background-color: #f8d7da;
-  color: #842029;
-  border-color: #dc3545;
+  background-color: rgba(194, 35, 47, 0.92);
+  color: #ffffff;
+  border-color: #ff737d;
 }
 
 /* ==========================================
@@ -675,14 +685,15 @@ form.sign-in-form {
   left: 0;
   width: 100%;
   height: 70px;
-  background-color: var(--field);
-  border-bottom: 1px solid var(--accent);
+  background-color: rgba(14, 16, 15, 0.18);
+  border-bottom: 1px solid rgba(245, 241, 230, 0.18);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 30px;
   z-index: 100;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  box-shadow: none;
+  backdrop-filter: blur(10px);
 }
 
 .logo-area {
@@ -714,8 +725,8 @@ form.sign-in-form {
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 5px 10px;
+  gap: 0;
+  padding: 5px;
   border-radius: 30px;
   transition: background 0.3s;
 }
@@ -725,8 +736,8 @@ form.sign-in-form {
 }
 
 .user-nav-avatar {
-  width: 40px;
-  height: 40px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   background-color: var(--accent);
   color: var(--button-text);
@@ -734,7 +745,7 @@ form.sign-in-form {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   overflow: hidden;
   object-fit: cover;
 }
@@ -746,9 +757,7 @@ form.sign-in-form {
 }
 
 .user-nav-name {
-  color: var(--text);
-  font-weight: 600;
-  font-size: 0.95rem;
+  display: none;
 }
 
 /* Dropdown Menu */
@@ -808,9 +817,9 @@ form.sign-in-form {
 
 /* Dashboard Views Container */
 .dashboard-views {
-  margin-top: 70px;
+  margin-top: 0;
   width: 100%;
-  min-height: calc(100vh - 70px);
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -837,19 +846,19 @@ form.sign-in-form {
 
 /* Landing View Welcome Card */
 .welcome-card {
-  background-color: var(--field);
-  border: 1px solid var(--accent);
-  border-radius: 24px;
-  padding: 50px 40px;
-  max-width: 600px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 70px 40px 130px;
+  max-width: 760px;
   width: 90%;
   text-align: center;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 25px;
-  color: var(--text);
+  gap: 20px;
+  color: #f5f1e6;
 }
 
 .welcome-avatar-large {
@@ -866,6 +875,7 @@ form.sign-in-form {
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   overflow: hidden;
   object-fit: cover;
+  display: none;
 }
 
 .welcome-avatar-large img {
@@ -875,25 +885,189 @@ form.sign-in-form {
 }
 
 .welcome-card h1 {
-  font-size: 2.2rem;
-  font-weight: 700;
+  max-width: 760px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 7vw, 6.8rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-shadow: 0 5px 25px rgba(0, 0, 0, 0.28);
 }
 
 .welcome-card p {
-  color: var(--muted);
-  font-size: 1.05rem;
+  color: rgba(245, 241, 230, 0.76);
+  font-size: 0.98rem;
   line-height: 1.6;
   max-width: 450px;
 }
 
 .chat-enter-btn {
-  width: 250px;
-  height: 55px;
-  font-size: 1rem;
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  width: auto;
+  min-width: 210px;
+  height: 50px;
+  padding: 0 24px;
+  font-size: 0.82rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
+}
+
+.dashboard-chat-launch {
+  background-color: #f5f1e6;
+  color: #171512;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.24);
+}
+
+/* Project overview below the post-login hero */
+.dashboard-page {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#landing-panel.dashboard-panel.active {
+  position: relative;
+  display: block;
+  height: auto;
+  min-height: 100vh;
+  padding: 90px 5vw 120px;
+  opacity: 1;
+  transform: none;
+}
+
+.dashboard-hero-copy {
+  min-height: 74vh;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.project-overview {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding-top: 38px;
+  color: #f5f1e6;
+}
+
+.project-overview-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(245, 241, 230, 0.27);
+}
+
+.project-eyebrow,
+.project-count,
+.project-type,
+.project-status {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.project-eyebrow,
+.project-count,
+.project-type {
+  color: rgba(245, 241, 230, 0.62);
+}
+
+.project-overview h2 {
+  margin-top: 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.7rem);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding-top: 14px;
+}
+
+.project-card {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  overflow: hidden;
+  color: #f5f1e6;
+  background-color: #263530;
+  background-position: center;
+  background-size: cover;
+  isolation: isolate;
+  transition: transform 0.3s ease;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 17, 16, 0.1), rgba(10, 17, 16, 0.82));
+}
+
+.project-card:hover { transform: translateY(-4px); }
+.project-card:focus-visible { outline: 2px solid #e9b875; outline-offset: 3px; }
+.project-card-wide { grid-column: span 1; }
+.project-card-atlas { background-image: url("./img/truck01.png"); }
+.project-card-tide { background-image: url("./img/trailer01.png"); }
+.project-card-field { background-image: url("https://images.unsplash.com/photo-1490730141103-6cac27aea3c7?auto=format&fit=crop&w=900&q=82"); }
+.project-card-north { background-image: url("https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=900&q=82"); }
+
+.project-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.project-card-top { color: rgba(245, 241, 230, 0.72); font-size: 0.72rem; }
+.project-status { color: #e9b875; }
+.project-card h3 { margin: 9px 0 8px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.55rem, 2.6vw, 2.45rem); font-weight: 400; line-height: 0.98; }
+.project-card p { max-width: 300px; color: rgba(245, 241, 230, 0.72); font-size: 0.78rem; line-height: 1.5; }
+.project-arrow { position: absolute; right: 20px; bottom: 20px; display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid rgba(245, 241, 230, 0.42); border-radius: 50%; color: #f5f1e6; font-size: 0.75rem; }
+
+@media (max-width: 700px) {
+  #landing-panel.dashboard-panel.active { padding: 84px 20px 100px; }
+  .dashboard-hero-copy { min-height: 76vh; width: 100%; padding: 40px 10px 120px; }
+  .project-overview-heading { align-items: start; flex-direction: column; gap: 12px; }
+  .project-grid { grid-template-columns: 1fr; }
+  .project-card-wide { grid-column: span 1; }
+  .project-card { min-height: 0; }
+  .chat-enter-btn { left: 20px; bottom: 24px; min-width: 190px; }
+}
+
+.dashboard-chat-launch:hover {
+  background-color: var(--accent);
+  color: var(--button-text);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard-header .logo-area h2,
+.dashboard-header .logo-area i,
+.dashboard-header .user-nav-avatar {
+  color: #f5f1e6;
+}
+
+.dashboard-header .logo-area i,
+.dashboard-header .user-nav-avatar {
+  background-color: rgba(245, 241, 230, 0.18);
+}
+
+.dashboard-header .logo-area i {
+  background: transparent;
+}
+
+.dashboard-header .user-nav-avatar {
+  border: 1px solid rgba(245, 241, 230, 0.55);
 }
 
 /* Profile Modal Dialog */
@@ -1258,4 +1432,186 @@ form.sign-in-form {
   font-size: 1.35rem;
   line-height: 1;
   transform: rotate(-18deg);
+}
+
+.chat-back-btn i {
+  display: none;
+}
+
+.chat-back-btn::before {
+  content: "←";
+  display: inline-block;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+/* Transparent styling for the login UI only */
+.container:not(.dashboard-page) {
+  background-color: #14120f;
+  background-image: linear-gradient(90deg, rgba(10, 17, 16, 0.58), rgba(10, 17, 16, 0.18)), url("./img/aurora-nova.svg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.container:not(.dashboard-page) .signin-signup {
+  padding: 34px 0;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.container:not(.dashboard-page) .input-field {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.container:not(.dashboard-page) .input-field input,
+.container:not(.dashboard-page) .title {
+  color: var(--text);
+}
+
+.container:not(.dashboard-page) .input-field input::placeholder {
+  color: var(--muted);
+}
+
+.container:not(.dashboard-page) .btn.solid {
+  background-color: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  color: #171512;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.container:not(.dashboard-page) .btn.solid:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #171512;
+  box-shadow: none;
+}
+
+.dashboard-page .dashboard-chat-launch {
+  position: fixed;
+  left: 30px;
+  bottom: 30px;
+  z-index: 200;
+}
+
+@media (max-width: 570px) {
+  .dashboard-page .dashboard-chat-launch {
+    left: 20px;
+    bottom: 24px;
+  }
+}
+
+.container:not(.dashboard-page)::before {
+  background-color: rgba(37, 37, 37, 0.72);
+  background-image: none;
+  border: 1px solid rgba(220, 224, 220, 0.2);
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.1), inset -18px -18px 42px rgba(0, 0, 0, 0.18), 0 20px 60px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(18px) saturate(110%);
+  -webkit-backdrop-filter: blur(18px) saturate(110%);
+}
+
+.container:not(.dashboard-page):has(.left-panel:hover)::before,
+.container:not(.dashboard-page):has(.right-panel:hover)::before {
+  background-color: rgba(48, 48, 48, 0.72);
+  background-image: none;
+  border-color: rgba(235, 239, 235, 0.28);
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.15), inset -18px -18px 42px rgba(0, 0, 0, 0.14), 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.container:not(.dashboard-page) .panel h3 {
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+}
+
+.container:not(.dashboard-page) .panel p {
+  font-size: clamp(0.78rem, 1.2vw, 0.98rem);
+}
+
+@media (max-width: 570px) {
+  .container:not(.dashboard-page) .panel h3 {
+    font-size: 1.28rem;
+  }
+
+  .container:not(.dashboard-page) .panel p {
+    font-size: 0.76rem;
+  }
+}
+
+/* Shared glass treatment for the dashboard UI */
+.dashboard-page {
+  --glass-fill: rgba(20, 24, 22, 0.42);
+  --glass-fill-strong: rgba(20, 24, 22, 0.62);
+  --glass-line: rgba(245, 241, 230, 0.28);
+  --glass-text: #f5f1e6;
+}
+
+.dashboard-page .dropdown-menu,
+.dashboard-page .chat-box-container,
+.dashboard-page .modal-box,
+.dashboard-page .form-group input {
+  background-color: var(--glass-fill-strong);
+  border-color: var(--glass-line);
+  backdrop-filter: blur(22px) saturate(125%);
+  -webkit-backdrop-filter: blur(22px) saturate(125%);
+}
+
+.dashboard-page .dropdown-menu button,
+.dashboard-page .modal-header,
+.dashboard-page .form-group label,
+.dashboard-page .modal-close-btn {
+  color: var(--glass-text);
+}
+
+.dashboard-page .dropdown-menu button:hover,
+.dashboard-page .profile-trigger-btn:hover,
+.dashboard-page .chat-back-btn:hover {
+  background-color: rgba(245, 241, 230, 0.12);
+}
+
+.dashboard-page .chat-header,
+.dashboard-page .chat-footer {
+  background-color: var(--glass-fill);
+  border-color: var(--glass-line);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.dashboard-page .chat-messages {
+  background-color: rgba(7, 12, 11, 0.2);
+}
+
+.dashboard-page .chat-input-field {
+  background-color: rgba(245, 241, 230, 0.08);
+  border-color: var(--glass-line);
+  color: var(--glass-text);
+}
+
+.dashboard-page .dashboard-chat-launch {
+  background-color: rgba(245, 241, 230, 0.16);
+  border: 1px solid rgba(245, 241, 230, 0.55);
+  color: var(--glass-text);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.dashboard-page .dashboard-chat-launch:hover {
+  background-color: rgba(245, 241, 230, 0.82);
+  color: #171512;
+}
+
+.dashboard-page .project-card {
+  border: 1px solid rgba(245, 241, 230, 0.24);
+  box-shadow: inset 0 1px 0 rgba(245, 241, 230, 0.12), 0 18px 40px rgba(0, 0, 0, 0.16);
+}
+
+.dashboard-page .modal-overlay {
+  background-color: rgba(5, 10, 9, 0.48);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
