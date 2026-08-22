@@ -5,6 +5,7 @@ const {
     signInWithEmailAndPassword,
     updateProfile
 } = window;
+const t = window.translate;
 
 // DOM Elements for Theme and Layout
 const sign_in_btn = document.querySelector("#sign-in-btn");
@@ -223,7 +224,7 @@ signup_form.addEventListener("submit", (e) => {
     const password = signup_password.value;
 
     if (!auth || !createUserWithEmailAndPassword || !updateProfile) {
-        showFormMessage("signup", "Firebase Auth wurde nicht richtig initialisiert.", "error");
+        showFormMessage("signup", t("auth.initError"), "error");
         return;
     }
 
@@ -234,7 +235,7 @@ signup_form.addEventListener("submit", (e) => {
             return updateProfile(user, {
                 displayName: username
             }).then(() => {
-                showFormMessage("signup", "Registrierung erfolgreich! Bitte logge dich jetzt ein.", "success");
+                showFormMessage("signup", t("auth.signupSuccess"), "success");
                 signup_form.reset();
                 
                 // Delay switching back to Login mode slightly so the user sees the inline success message
@@ -245,20 +246,20 @@ signup_form.addEventListener("submit", (e) => {
         })
         .catch((error) => {
             console.error("Sign Up Error:", error);
-            let errorMessage = "Registrierung fehlgeschlagen.";
+            let errorMessage = t("auth.signupFailed");
             
             switch (error.code) {
                 case "auth/email-already-in-use":
-                    errorMessage = "Diese E-Mail-Adresse wird bereits verwendet.";
+                    errorMessage = t("auth.emailInUse");
                     break;
                 case "auth/invalid-email":
-                    errorMessage = "Die E-Mail-Adresse ist ungültig.";
+                    errorMessage = t("auth.invalidEmail");
                     break;
                 case "auth/weak-password":
-                    errorMessage = "Das Passwort ist zu schwach (mindestens 6 Zeichen).";
+                    errorMessage = t("auth.weakPassword");
                     break;
                 case "auth/operation-not-allowed":
-                    errorMessage = "E-Mail/Passwort-Registrierung ist in Firebase nicht aktiviert.";
+                    errorMessage = t("auth.notEnabled");
                     break;
                 default:
                     errorMessage = error.message;
@@ -275,32 +276,32 @@ signin_form.addEventListener("submit", (e) => {
     const password = signin_password.value;
 
     if (!auth || !signInWithEmailAndPassword) {
-        showFormMessage("signin", "Firebase Auth wurde nicht richtig initialisiert.", "error");
+        showFormMessage("signin", t("auth.initError"), "error");
         return;
     }
 
     signInWithEmailAndPassword(auth, email, password)
         .then(() => {
-            showToast("Erfolgreich angemeldet! Weiterleitung...", "success");
+            showToast(t("auth.loginSuccess"), "success");
             setTimeout(() => {
                 window.location.href = "dashboard.html";
             }, 1200);
         })
         .catch((error) => {
             console.error("Sign In Error:", error);
-            let errorMessage = "Login fehlgeschlagen.";
+            let errorMessage = t("auth.loginFailed");
 
             switch (error.code) {
                 case "auth/user-not-found":
                 case "auth/wrong-password":
                 case "auth/invalid-credential":
-                    errorMessage = "E-Mail oder Passwort ist falsch.";
+                    errorMessage = t("auth.credentials");
                     break;
                 case "auth/invalid-email":
-                    errorMessage = "Die E-Mail-Adresse ist ungültig.";
+                    errorMessage = t("auth.invalidEmail");
                     break;
                 case "auth/user-disabled":
-                    errorMessage = "Dieser Benutzer wurde deaktiviert.";
+                    errorMessage = t("auth.disabled");
                     break;
                 default:
                     errorMessage = error.message;

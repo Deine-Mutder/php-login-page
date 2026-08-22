@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard & Live-Chat</title>
+    <title data-i18n="dashboard.globalChat">Chat Room</title>
     <link rel="stylesheet" type="text/css" href="./style.css" />
     <script
       src="https://kit.fontawesome.com/64d58efce2.js"
@@ -23,16 +23,16 @@
         <!-- User Avatar Menu Dropdown -->
         <div class="profile-menu-container">
           <button class="profile-trigger-btn" id="profile-trigger">
-            <span class="user-nav-name" id="nav-username">Lade...</span>
+            <span class="user-nav-name" id="nav-username" data-i18n="dashboard.loading">Loading...</span>
             <div class="user-nav-avatar" id="nav-avatar">-</div>
           </button>
           
           <div class="dropdown-menu" id="dropdown-menu">
             <button id="edit-profile-opt">
-              <i class="fas fa-user-edit"></i> Profil bearbeiten
+              <i class="fas fa-user-edit"></i> <span data-i18n="dashboard.editProfile">Edit profile</span>
             </button>
             <button id="logout-btn">
-              <i class="fas fa-sign-out-alt"></i> Abmelden
+              <i class="fas fa-sign-out-alt"></i> <span data-i18n="dashboard.logout">Log out</span>
             </button>
           </div>
         </div>
@@ -45,10 +45,10 @@
         <section class="dashboard-panel active" id="landing-panel">
           <div class="welcome-card">
             <div class="welcome-avatar-large" id="welcome-avatar-large">-</div>
-            <h1 id="welcome-title">Willkommen!</h1>
-            <p>Bereit für eine Unterhaltung? Tritt dem globalen Live-Chat bei, um dich in Echtzeit mit allen angemeldeten Usern auszutauschen.</p>
+            <h1 id="welcome-title">Welcome!</h1>
+            <p data-i18n="dashboard.welcomeText">Ready for a conversation? Join the global live chat and connect with everyone online in real time.</p>
             <button class="btn chat-enter-btn" id="enter-chat-btn">
-              <i class="fas fa-arrow-right"></i> Zum Chat-Room
+              <i class="fas fa-arrow-right"></i> <span data-i18n="dashboard.enterChat">Join Chat Room</span>
             </button>
           </div>
         </section>
@@ -58,10 +58,10 @@
           <div class="chat-box-container">
             <div class="chat-header">
               <button class="chat-back-btn" id="chat-back-btn">
-                <i class="fas fa-arrow-left"></i> Zurück
+                <i class="fas fa-arrow-left"></i> <span data-i18n="dashboard.back">Back</span>
               </button>
               <div class="chat-header-info">
-                <h3>Globaler Chat-Room</h3>
+                <h3 data-i18n="dashboard.globalChat">Global Chat Room</h3>
               </div>
             </div>
             
@@ -75,11 +75,12 @@
                   type="text"
                   class="chat-input-field"
                   id="chat-input"
-                  placeholder="Schreibe eine Nachricht..."
+                  placeholder="Write a message..."
+                  data-i18n-placeholder="dashboard.messagePlaceholder"
                   required
                   autocomplete="off"
                 />
-                <button type="submit" class="chat-send-btn" title="Nachricht senden" aria-label="Nachricht senden">
+                <button type="submit" class="chat-send-btn" title="Send message" aria-label="Send message" data-i18n-title="dashboard.send">
                   <span aria-hidden="true">➤</span>
                 </button>
               </form>
@@ -93,29 +94,31 @@
       <div class="modal-overlay" id="profile-modal">
         <div class="modal-box">
           <div class="modal-header">
-            <h3>Profil bearbeiten</h3>
+            <h3 data-i18n="dashboard.editTitle">Edit profile</h3>
             <button class="modal-close-btn" id="modal-close-btn">
               <i class="fas fa-times"></i>
             </button>
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <label for="profile-name-input">Anzeigename</label>
-              <input type="text" id="profile-name-input" placeholder="Dein Name" required />
+              <label for="profile-name-input" data-i18n="dashboard.displayName">Display name</label>
+              <input type="text" id="profile-name-input" placeholder="Your name" data-i18n-placeholder="dashboard.yourName" required />
             </div>
             <div class="form-group">
-              <label for="profile-avatar-input">Profilbild-URL</label>
+              <label for="profile-avatar-input" data-i18n="dashboard.avatarUrl">Profile image URL</label>
               <input type="url" id="profile-avatar-input" placeholder="https://example.com/avatar.jpg" />
             </div>
             <div class="modal-actions">
-              <button class="btn btn-secondary" id="modal-cancel-btn">Abbrechen</button>
-              <button class="btn" id="modal-save-btn">Speichern</button>
+              <button class="btn btn-secondary" id="modal-cancel-btn" data-i18n="dashboard.cancel">Cancel</button>
+              <button class="btn" id="modal-save-btn" data-i18n="dashboard.save">Save</button>
             </div>
           </div>
         </div>
       </div>
 
     </div>
+
+    <script src="./language.js"></script>
 
     <!-- Firebase Script Logic -->
     <script type="module">
@@ -137,6 +140,7 @@
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
       const db = getFirestore(app);
+      const t = window.translate;
 
       // DOM Elements
       const containerElement = document.querySelector(".container");
@@ -182,7 +186,7 @@
 
       // 1. Fetch profile details from Firestore and update UI
       async function updateUserInfoUI(user) {
-        let displayName = user.displayName || "Benutzer";
+        let displayName = user.displayName || (window.appLanguage === "de" ? "Benutzer" : "User");
         let photoURL = user.photoURL || "";
 
         try {
@@ -194,7 +198,7 @@
             photoURL = userData.photoURL || photoURL;
           }
         } catch (error) {
-          console.error("Fehler beim Laden des Profils aus Firestore:", error);
+          console.error("Failed to load profile from Firestore:", error);
         }
 
         // Update Nav
@@ -207,7 +211,7 @@
         }
 
         // Update Landing panel welcome card
-        welcomeTitle.textContent = `Willkommen zurück, ${displayName}!`;
+        welcomeTitle.textContent = t("dashboard.welcome", { name: displayName });
         if (photoURL) {
           welcomeAvatarLarge.innerHTML = `<img src="${photoURL}" alt="avatar" />`;
         } else {
@@ -260,7 +264,7 @@
         const avatarUrl = profileAvatarInput.value.trim();
 
         if (!name) {
-          alert("Bitte gib einen Anzeigenamen ein.");
+          alert(t("dashboard.nameRequired"));
           return;
         }
 
@@ -282,8 +286,8 @@
           await updateUserInfoUI(currentUser);
           closeModal();
         } catch (error) {
-          console.error("Fehler beim Speichern des Profils:", error);
-          alert("Profil konnte nicht gespeichert werden.");
+          console.error("Failed to save profile:", error);
+          alert(t("dashboard.profileError"));
         }
       });
 
@@ -348,7 +352,7 @@
 
         const senderName = document.createElement("span");
         senderName.className = "msg-sender";
-        senderName.textContent = isOutgoing ? "Du" : (data.displayName || "Anonym");
+        senderName.textContent = isOutgoing ? t("dashboard.you") : (data.displayName || t("dashboard.anonymous"));
         meta.appendChild(senderName);
 
         if (data.createdAt) {
@@ -363,15 +367,15 @@
           const deleteButton = document.createElement("button");
           deleteButton.className = "msg-delete-btn";
           deleteButton.type = "button";
-          deleteButton.title = "Nachricht löschen";
-          deleteButton.setAttribute("aria-label", "Nachricht löschen");
-          deleteButton.textContent = "Löschen";
+          deleteButton.title = t("dashboard.delete");
+          deleteButton.setAttribute("aria-label", t("dashboard.delete"));
+          deleteButton.textContent = t("dashboard.delete");
           deleteButton.addEventListener("click", async () => {
             try {
               await deleteDoc(doc(db, "messages", messageId));
             } catch (error) {
-              console.error("Fehler beim Löschen der Nachricht:", error);
-              alert("Nachricht konnte nicht gelöscht werden.");
+              console.error("Failed to delete message:", error);
+              alert(t("dashboard.deleteError"));
             }
           });
           meta.appendChild(deleteButton);
@@ -405,7 +409,7 @@
           // Fetch current profile to ensure it is always fresh in messages
           const userDocRef = doc(db, "users", currentUser.uid);
           const userSnap = await getDoc(userDocRef);
-          let displayName = currentUser.displayName || "Benutzer";
+          let displayName = currentUser.displayName || (window.appLanguage === "de" ? "Benutzer" : "User");
           let photoURL = currentUser.photoURL || "";
 
           if (userSnap.exists()) {
@@ -424,8 +428,8 @@
           });
 
         } catch (error) {
-          console.error("Fehler beim Senden der Nachricht:", error);
-          alert("Fehler beim Senden der Nachricht.");
+          console.error("Failed to send message:", error);
+          alert(t("dashboard.sendError"));
         }
       });
 
