@@ -15,33 +15,35 @@
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="" class="sign-in-form">
+          <form action="" class="sign-in-form" id="signin-form">
             <h2 class="title">Sign In</h2>
+            <div class="form-message" id="signin-message"></div>
             <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Email" id="signin-email" required />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" placeholder="Password" id="signin-password" required />
             </div>
             <input type="submit" value="Login" class="btn solid" />
           </form>
 
 
-          <form action="" class="sign-up-form">
+          <form action="" class="sign-up-form" id="signup-form">
             <h2 class="title">Sign Up</h2>
+            <div class="form-message" id="signup-message"></div>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input type="text" placeholder="Username" id="signup-username" required />
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
+              <input type="email" placeholder="Email" id="signup-email" required />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" placeholder="Password" id="signup-password" required />
             </div>
             <input type="submit" value="Sign Up" class="btn solid" />
           </form>
@@ -86,6 +88,31 @@
       </div>
     </div>
 
-    <script src="./app.js"></script>
+    <!-- Firebase configuration & Initialization -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+      import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBU7Bs4P7M_kTkc2bs0rWnjEClQhFUHVrg",
+        authDomain: "php-login-page-cfb77.firebaseapp.com",
+        projectId: "php-login-page-cfb77",
+        storageBucket: "php-login-page-cfb77.firebasestorage.app",
+        messagingSenderId: "347270214304",
+        appId: "1:347270214304:web:ec0204f802cd85c0b14fc5",
+        measurementId: "G-6JL362S1PC"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      // Expose Firebase to window for app.js
+      window.auth = auth;
+      window.createUserWithEmailAndPassword = createUserWithEmailAndPassword;
+      window.signInWithEmailAndPassword = signInWithEmailAndPassword;
+      window.updateProfile = updateProfile;
+    </script>
+
+    <script type="module" src="./app.js"></script>
   </body>
 </html>

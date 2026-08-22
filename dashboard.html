@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Welcome</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* Additional dashboard-specific styles to complement style.css */
+      .dashboard-card {
+        background-color: var(--field);
+        border: 1px solid var(--accent);
+        border-radius: 20px;
+        padding: 40px;
+        max-width: 500px;
+        width: 90%;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        color: var(--text);
+      }
+
+      .dashboard-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        width: 100%;
+        background-color: var(--surface);
+      }
+
+      .user-avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: var(--accent);
+        color: var(--button-text);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        margin-bottom: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .dashboard-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+
+      .dashboard-subtitle {
+        color: var(--muted);
+        font-size: 1rem;
+        margin-bottom: 20px;
+      }
+
+      /* Reuse .btn style from style.css */
+      .logout-btn {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container dashboard-container">
+      <div class="dashboard-card">
+        <div class="user-avatar" id="user-initials">-</div>
+        <h1 class="dashboard-title">Willkommen!</h1>
+        <p class="dashboard-subtitle" id="welcome-user">Lade Profil...</p>
+        <button class="btn logout-btn" id="logout-btn">
+          <i class="fas fa-sign-out-alt"></i> Abmelden
+        </button>
+      </div>
+    </div>
+
+    <!-- Firebase Script and Logic -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+      import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBU7Bs4P7M_kTkc2bs0rWnjEClQhFUHVrg",
+        authDomain: "php-login-page-cfb77.firebaseapp.com",
+        projectId: "php-login-page-cfb77",
+        storageBucket: "php-login-page-cfb77.firebasestorage.app",
+        messagingSenderId: "347270214304",
+        appId: "1:347270214304:web:ec0204f802cd85c0b14fc5",
+        measurementId: "G-6JL362S1PC"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      // DOM Elements
+      const welcomeUser = document.getElementById("welcome-user");
+      const userInitials = document.getElementById("user-initials");
+      const logoutBtn = document.getElementById("logout-btn");
+      const containerElement = document.querySelector(".container");
+
+      // Apply saved theme automatically
+      const savedTheme = localStorage.getItem("login-page-theme");
+      if (savedTheme) {
+        containerElement.classList.add(savedTheme);
+      } else {
+        containerElement.classList.add("theme-red-black");
+      }
+
+      // Check auth state
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // User is signed in
+          const displayName = user.displayName || "Benutzer";
+          const email = user.email;
+          
+          welcomeUser.innerHTML = `Hallo, <strong>${displayName}</strong>!<br><span style="font-size: 0.85rem; font-weight: normal; color: var(--muted);">${email}</span>`;
+          
+          // Generate initials for avatar
+          const initial = displayName.trim().charAt(0).toUpperCase();
+          userInitials.textContent = initial;
+        } else {
+          // No user is signed in, redirect to index.html
+          window.location.href = "index.html";
+        }
+      });
+
+      // Logout handler
+      logoutBtn.addEventListener("click", () => {
+        signOut(auth)
+          .then(() => {
+            window.location.href = "index.html";
+          })
+          .catch((error) => {
+            console.error("Sign Out Error", error);
+          });
+      });
+    </script>
+  </body>
+</html>
+
