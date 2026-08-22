@@ -47,6 +47,10 @@ input {
   --button-text: #fbf9e4;
 }
 
+.dashboard-page:before {
+  display: none;
+}
+
 .forms-container {
   position: absolute;
   width: 100%;
