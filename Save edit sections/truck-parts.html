@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Truck parts | Project library</title>
+    <link rel="stylesheet" href="../project-pages.css" />
+  </head>
+  <body class="project-page" data-category="Truck parts" data-all-tags="beacon b_grill codrv_plate codrv_seat cor_def curtain_f decals doorhndl doorstep doortrim drv_plate exhaust_l exhaust_r filter fmtglss_mid f_badge f_bumper f_chs_logo f_fender_cab f_grill f_inlay_chs f_intake_bar f_intake_cab f_light_chs f_logo f_mirror f_mudflap f_turn_light f_wnd_frame hl_guard intlight_bck l_horn mirror mir_guard r_bumper r_chs_cover r_deflector r_fender r_fendr_top r_grill r_horn r_mudflap set_lglass sideskirt steering_w sunshld s_deflector s_guard s_mirror s_panel s_strip tank windowtrim">
+    <div class="project-shell">
+      <nav class="project-nav"><a class="project-back" href="../dashboard.html">&larr; Back to library</a><span class="project-brand">Truck parts</span></nav>
+      <header class="project-intro"><div><span class="project-kicker">03 / Parts library</span><h1>Truck parts</h1></div><p>Keep truck parts, components and visual references organized for every build.</p>      </header>
+
+      <div class="project-layout">
+        <aside class="project-sidebar">
+          <input class="project-search" id="project-search" type="search" placeholder="Search by brand or project name..." />
+          <div>
+            <div class="project-sidebar-label">Tail types</div>
+            <div class="tag-filter" id="tag-filter"></div>
+          </div>
+        </aside>
+        <div class="project-content">
+          <div class="project-results" id="project-results"></div>
+          <main class="post-grid">
+        <!--
+        ============================================================
+        CARD TEMPLATE — copy & paste inside <main class="post-grid">
+        in any of these pages:
+        full-trucks.html / full-trailers.html / truck-parts.html / trailer-parts.html
+        Change the 5 values marked with ← CHANGE
+        ============================================================
+        -->
+
+        <!-- ==============================TruckParts01============================== -->
+        <article class="post-card" data-title="Truck parts 01" data-file="../save-edits/truck-parts-01.txt" data-tags="f_logo f_bumper f_grill">
+          <img class="post-image" src="../img/truck01.png" alt="Truck parts 01 project" />
+          <div class="post-info">
+            <div class="post-meta"><span>Truck parts 01</span><span>01</span></div>
+            <h2>Truck parts 01</h2>
+            <p>Truck components, references and project files.</p>
+            <button class="post-open" type="button">Download project</button>
+          </div>
+        </article>
+
+        <!-- ==============================TruckParts02============================== -->
+        <article class="post-card" data-title="Truck parts 02" data-file="../save-edits/truck-parts-02.txt" data-tags="f_turn_light f_mirror f_mudflap">
+          <img class="post-image" src="../img/truck02.png" alt="Truck parts 02 project" />
+          <div class="post-info">
+            <div class="post-meta"><span>Truck parts 02</span><span>02</span></div>
+            <h2>Truck parts 02</h2>
+            <p>Truck components, references and project files.</p>
+            <button class="post-open" type="button">Download project</button>
+          </div>
+        </article>
+
+        <!--============================================================
+        --------------------CARD TEMPLATE — End-------------------------
+        ============================================================ -->
+      </main>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="post-modal" aria-hidden="true"><div class="modal-box"><button class="modal-close" id="modal-close" type="button" aria-label="Close">&times;</button><img class="modal-image" id="modal-image" alt="" /><div class="modal-details"><h2 id="modal-title"></h2><div class="modal-actions"><a class="modal-action" id="download-image" download>Download project</a><button class="modal-action" id="preview-toggle" type="button">Code preview</button></div></div><pre class="code-preview" id="code-preview"></pre></div></div>
+    <script src="../project-pages.js"></script>
+  </body>
+</html>

@@ -1,0 +1,878 @@
+vehicle_accessory : _nameless.191.4e1b.7ba0 {
+ data_path: "/def/vehicle/truck/iveco.sway/data.sii"
+ refund: 0
+}
+
+vehicle_accessory : _nameless.191.4e1b.7fa0 {
+ data_path: "/def/vehicle/truck/iveco.sway/cabin/as.sii"
+ refund: 34680
+}
+
+vehicle_accessory : _nameless.191.4e1b.7e20 {
+ data_path: "/def/vehicle/truck/scania.r_2016/engine/dc16_770.sii"
+ refund: 32076
+}
+
+vehicle_accessory : _nameless.191.4e1b.7ee0 {
+ data_path: "/def/vehicle/truck/man.tgx_2020/transmission/allison_retarder.sii"
+ refund: 18000
+}
+
+vehicle_accessory : _nameless.191.4e1b.81e0 {
+ data_path: "/def/vehicle/truck/iveco.sway/head_light/led.sii"
+ refund: 0
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.6eb0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/cor_def/plastic.sii"
+ refund: 540
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.7950 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/doorhndl/plastic.sii"
+ refund: 480
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.6a50 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/doorstep/standard.sii"
+ refund: 1860
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.6af0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/f_bumper/paint.sii"
+ refund: 1425
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.6b90 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/f_fender_chs/paint.sii"
+ refund: 2800
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.6d70 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/f_light_chs/led.sii"
+ refund: 780
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.4390 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/f_logo/gun_metal.sii"
+ refund: 400
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.4070 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/f_wnd_frame/plastic.sii"
+ refund: 720
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.5970 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/r_deflector/paint.sii"
+ refund: 1170
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.5e70 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/r_fender/plastic_4x2.sii"
+ refund: 960
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.5830 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/r_fendr_top/plastic_4x2.sii"
+ refund: 480
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.58d0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/r_light/led.sii"
+ refund: 1200
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.46b0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/s_deflector/paint.sii"
+ refund: 1560
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.5fb0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/s_mirror/plastic2.sii"
+ refund: 540
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.5a10 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/s_panel/plastic.sii"
+ refund: 450
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.41b0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/sunshield/standard.sii"
+ refund: 2160
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.50b0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/tank/4x2_1190.sii"
+ refund: 1260
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.4890 {
+ slot_name: 7
+ slot_name[0]: slot_1
+ slot_name[1]: slot_2
+ slot_name[2]: slot_9
+ slot_name[3]: slot_7
+ slot_name[4]: slot_5
+ slot_name[5]: slot_6
+ slot_name[6]: slot_8
+ slot_hookup: 7
+ slot_hookup[0]: "smalllight7.addon_hookup"
+ slot_hookup[1]: "smalllight8.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: "smalllight1.addon_hookup"
+ slot_hookup[5]: "smalllight1.addon_hookup"
+ slot_hookup[6]: "smalllight1.addon_hookup"
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/b_grill/hss_paint1.sii"
+ refund: 3300
+}
+
+vehicle_paint_job_accessory : _nameless.192.0d09.f6f0 {
+ mask_r_color: (1, 0, 0)
+ mask_g_color: (0, 1, 0)
+ mask_b_color: (0, 0, 1)
+ flake_color: (1, 1, 1)
+ flip_color: (&3e19999a, &3e19999a, &3e19999a)
+ base_color: (1, &3ec33d2d, 0)
+ data_path: "/def/vehicle/truck/iveco.sway/paint_job/color0_a.sii"
+ refund: 5200
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.5f10 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/f_intake_cab/standard.sii"
+ refund: 750
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.5010 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/f_intake_chs/paint.sii"
+ refund: 3600
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.51f0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/mirror/standard_plastic.sii"
+ refund: 3360
+}
+
+vehicle_accessory : _nameless.191.4e1b.7e60 {
+ data_path: "/def/vehicle/truck/iveco.sway/chassis/4x2.sii"
+ refund: 23760
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.53d0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/sideskirt/paint_4x2_aero.sii"
+ refund: 19600
+}
+
+vehicle_addon_accessory : _nameless.190.e3d2.5470 {
+ slot_name: 10
+ slot_name[0]: slot_1
+ slot_name[1]: slot_2
+ slot_name[2]: slot_3
+ slot_name[3]: slot_4
+ slot_name[4]: slot_5
+ slot_name[5]: slot_10
+ slot_name[6]: slot_9
+ slot_name[7]: slot_8
+ slot_name[8]: slot_7
+ slot_name[9]: slot_6
+ slot_hookup: 10
+ slot_hookup[0]: "smalllight1.addon_hookup"
+ slot_hookup[1]: "smalllight1.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: "smalllight1.addon_hookup"
+ slot_hookup[5]: "smalllight1.addon_hookup"
+ slot_hookup[6]: "smalllight1.addon_hookup"
+ slot_hookup[7]: "smalllight1.addon_hookup"
+ slot_hookup[8]: "smalllight1.addon_hookup"
+ slot_hookup[9]: "smalllight1.addon_hookup"
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/sideskrt_bar/hss_paint1.sii"
+ refund: 5460
+}
+
+vehicle_addon_accessory : _nameless.191.6a42.2160 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/r_mudflap/logo_4x2.sii"
+ refund: 360
+}
+
+vehicle_addon_accessory : _nameless.191.6a42.23e0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xf/accessory/exhaust_m/exhaust2.sii"
+ refund: 13140
+}
+
+vehicle_wheel_accessory : _nameless.191.71bc.d8a0 {
+ offset: 0
+ paint_color: (1, &3ec33d2f, 0)
+ data_path: "/def/vehicle/f_tire/385_55_michelin_xline_energy_f2.sii"
+ refund: 2430
+}
+
+vehicle_wheel_accessory : _nameless.191.71bc.dc60 {
+ offset: 0
+ paint_color: (&3cadd37f, &3cadd37f, &3cadd37f)
+ data_path: "/def/vehicle/f_disc/front_disc_05_paintable.sii"
+ refund: 3300
+}
+
+vehicle_wheel_accessory : _nameless.191.71bc.ec20 {
+ offset: 0
+ paint_color: (&3cadd37f, &3cadd37f, &3cadd37f)
+ data_path: "/def/vehicle/f_nuts/front_nuts_02_paintable.sii"
+ refund: 630
+}
+
+vehicle_wheel_accessory : _nameless.191.71bc.e500 {
+ offset: 0
+ paint_color: (&3cadd37f, &3cadd37f, &3cadd37f)
+ data_path: "/def/vehicle/f_hub/front_hub_01_paintable.sii"
+ refund: 630
+}
+
+vehicle_wheel_accessory : _nameless.191.71bc.dae0 {
+ offset: 0
+ paint_color: (1, &3ec33d2f, 0)
+ data_path: "/def/vehicle/f_cover/front_hub_cover_01_paintable.sii"
+ refund: 420
+}
+
+vehicle_wheel_accessory : _nameless.191.71bc.df60 {
+ offset: 0
+ paint_color: (1, &3ec33d2d, 0)
+ data_path: "/def/vehicle/r_tire/r315-70_michelin_xlinez.dlc_michelin.sii"
+ refund: 5040
+}
+
+vehicle_wheel_accessory : _nameless.191.71bc.dd20 {
+ offset: 0
+ paint_color: (&3cadd37f, &3cadd37f, &3cadd37f)
+ data_path: "/def/vehicle/r_disc/rear_disc_02_paintable.sii"
+ refund: 6675
+}
+
+vehicle_wheel_accessory : _nameless.191.71bc.d900 {
+ offset: 0
+ paint_color: (&3cadd37f, &3cadd37f, &3cadd37f)
+ data_path: "/def/vehicle/r_nuts/rear_nuts_02_paintable.sii"
+ refund: 630
+}
+
+vehicle_wheel_accessory : _nameless.191.71bc.db40 {
+ offset: 0
+ paint_color: (&3cadd37f, &3cadd37f, &3cadd37f)
+ data_path: "/def/vehicle/r_hub/rear_hub_01_paintable.sii"
+ refund: 705
+}
+
+vehicle_wheel_accessory : _nameless.191.71bc.dba0 {
+ offset: 0
+ paint_color: (1, &3ec33d2f, 0)
+ data_path: "/def/vehicle/r_cover/rear_hub_cover_01_paintable.sii"
+ refund: 420
+}
+
+vehicle_addon_accessory : _nameless.191.6a42.1f80 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/scania.r_2016/accessory/l_horn/horn_05slsc.sii"
+ refund: 870
+}
+
+vehicle_addon_accessory : _nameless.191.6a42.2660 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/scania.r/accessory/r_horn/horn_05slsc.sii"
+ refund: 870
+}
+
+vehicle_addon_accessory : _nameless.191.6a42.2020 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/renault.premium/accessory/beacon/classic.sii"
+ refund: 720
+}
+
+vehicle_accessory : _nameless.191.4e1b.80a0 {
+ data_path: "/def/vehicle/truck/iveco.sway/interior/as_opt.sii"
+ refund: 24864
+}
+
+vehicle_addon_accessory : _nameless.191.6a42.3920 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/steering_w/aluminium.sii"
+ refund: 1800
+}
+
+vehicle_addon_accessory : _nameless.191.6a42.3420 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/set_lglass/cellphone_gps.sii"
+ refund: 1170
+}
+
+vehicle_addon_accessory : _nameless.191.6a42.2c00 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/carpet/standard.sii"
+ refund: 120
+}
+
+vehicle_drv_plate_accessory : _nameless.190.e8a8.7b70 {
+ text: ""
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/codrv_seat/leather.sii"
+ refund: 1200
+}
+
+vehicle_addon_accessory : _nameless.191.6a42.2480 {
+ slot_name: 7
+ slot_name[0]: slot_1
+ slot_name[1]: slot_2
+ slot_name[2]: slot_9
+ slot_name[3]: slot_7
+ slot_name[4]: slot_5
+ slot_name[5]: slot_6
+ slot_name[6]: slot_8
+ slot_hookup: 7
+ slot_hookup[0]: "smalllight7.addon_hookup"
+ slot_hookup[1]: "smalllight8.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: "smalllight1.addon_hookup"
+ slot_hookup[5]: "smalllight1.addon_hookup"
+ slot_hookup[6]: "smalllight1.addon_hookup"
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/b_grill/hss_paint1.sii"
+ refund: 3300
+}
+
+vehicle_addon_accessory : _nameless.191.6a42.2520 {
+ slot_name: 7
+ slot_name[0]: slot_1
+ slot_name[1]: slot_2
+ slot_name[2]: slot_9
+ slot_name[3]: slot_7
+ slot_name[4]: slot_5
+ slot_name[5]: slot_6
+ slot_name[6]: slot_8
+ slot_hookup: 7
+ slot_hookup[0]: "smalllight7.addon_hookup"
+ slot_hookup[1]: "smalllight8.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: "smalllight1.addon_hookup"
+ slot_hookup[5]: "smalllight1.addon_hookup"
+ slot_hookup[6]: "smalllight1.addon_hookup"
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/b_grill/hss_paint1.sii"
+ refund: 3300
+}
+
+vehicle_addon_accessory : _nameless.191.6a42.27a0 {
+ slot_name: 7
+ slot_name[0]: slot_1
+ slot_name[1]: slot_2
+ slot_name[2]: slot_9
+ slot_name[3]: slot_7
+ slot_name[4]: slot_5
+ slot_name[5]: slot_6
+ slot_name[6]: slot_8
+ slot_hookup: 7
+ slot_hookup[0]: "smalllight7.addon_hookup"
+ slot_hookup[1]: "smalllight8.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: "smalllight1.addon_hookup"
+ slot_hookup[5]: "smalllight1.addon_hookup"
+ slot_hookup[6]: "smalllight1.addon_hookup"
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/b_grill/hss_paint1.sii"
+ refund: 3300
+}
+
+vehicle_addon_accessory : _nameless.191.6a42.2fc0 {
+ slot_name: 7
+ slot_name[0]: slot_1
+ slot_name[1]: slot_2
+ slot_name[2]: slot_9
+ slot_name[3]: slot_7
+ slot_name[4]: slot_5
+ slot_name[5]: slot_6
+ slot_name[6]: slot_8
+ slot_hookup: 7
+ slot_hookup[0]: "smalllight7.addon_hookup"
+ slot_hookup[1]: "smalllight8.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: "smalllight1.addon_hookup"
+ slot_hookup[5]: "smalllight1.addon_hookup"
+ slot_hookup[6]: "smalllight1.addon_hookup"
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/b_grill/hss_paint1.sii"
+ refund: 3300
+}
+
+vehicle_addon_accessory : _nameless.191.6a42.28e0 {
+ slot_name: 10
+ slot_name[0]: slot_1
+ slot_name[1]: slot_2
+ slot_name[2]: slot_3
+ slot_name[3]: slot_4
+ slot_name[4]: slot_5
+ slot_name[5]: slot_10
+ slot_name[6]: slot_9
+ slot_name[7]: slot_8
+ slot_name[8]: slot_7
+ slot_name[9]: slot_6
+ slot_hookup: 10
+ slot_hookup[0]: "smalllight1.addon_hookup"
+ slot_hookup[1]: "smalllight1.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: "smalllight1.addon_hookup"
+ slot_hookup[5]: "smalllight1.addon_hookup"
+ slot_hookup[6]: "smalllight1.addon_hookup"
+ slot_hookup[7]: "smalllight1.addon_hookup"
+ slot_hookup[8]: "smalllight1.addon_hookup"
+ slot_hookup[9]: "smalllight1.addon_hookup"
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/sideskrt_bar/hss_paint1.sii"
+ refund: 5460
+}
+
+vehicle_addon_accessory : _nameless.191.6a42.3060 {
+ slot_name: 10
+ slot_name[0]: slot_1
+ slot_name[1]: slot_2
+ slot_name[2]: slot_3
+ slot_name[3]: slot_4
+ slot_name[4]: slot_5
+ slot_name[5]: slot_10
+ slot_name[6]: slot_9
+ slot_name[7]: slot_8
+ slot_name[8]: slot_7
+ slot_name[9]: slot_6
+ slot_hookup: 10
+ slot_hookup[0]: "smalllight1.addon_hookup"
+ slot_hookup[1]: "smalllight1.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: "smalllight1.addon_hookup"
+ slot_hookup[5]: "smalllight1.addon_hookup"
+ slot_hookup[6]: "smalllight1.addon_hookup"
+ slot_hookup[7]: "smalllight1.addon_hookup"
+ slot_hookup[8]: "smalllight1.addon_hookup"
+ slot_hookup[9]: "smalllight1.addon_hookup"
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/sideskrt_bar/hss_paint1.sii"
+ refund: 5460
+}
+
+vehicle_addon_accessory : _nameless.191.6a42.2980 {
+ slot_name: 10
+ slot_name[0]: slot_1
+ slot_name[1]: slot_2
+ slot_name[2]: slot_3
+ slot_name[3]: slot_4
+ slot_name[4]: slot_5
+ slot_name[5]: slot_10
+ slot_name[6]: slot_9
+ slot_name[7]: slot_8
+ slot_name[8]: slot_7
+ slot_name[9]: slot_6
+ slot_hookup: 10
+ slot_hookup[0]: "smalllight1.addon_hookup"
+ slot_hookup[1]: "smalllight1.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: "smalllight1.addon_hookup"
+ slot_hookup[5]: "smalllight1.addon_hookup"
+ slot_hookup[6]: "smalllight1.addon_hookup"
+ slot_hookup[7]: "smalllight1.addon_hookup"
+ slot_hookup[8]: "smalllight1.addon_hookup"
+ slot_hookup[9]: "smalllight1.addon_hookup"
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/sideskrt_bar/hss_paint1.sii"
+ refund: 5460
+}
+
+vehicle_addon_accessory : _nameless.191.6a42.2a20 {
+ slot_name: 10
+ slot_name[0]: slot_1
+ slot_name[1]: slot_2
+ slot_name[2]: slot_3
+ slot_name[3]: slot_4
+ slot_name[4]: slot_5
+ slot_name[5]: slot_10
+ slot_name[6]: slot_9
+ slot_name[7]: slot_8
+ slot_name[8]: slot_7
+ slot_name[9]: slot_6
+ slot_hookup: 10
+ slot_hookup[0]: "smalllight1.addon_hookup"
+ slot_hookup[1]: "smalllight1.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: "smalllight1.addon_hookup"
+ slot_hookup[5]: "smalllight1.addon_hookup"
+ slot_hookup[6]: "smalllight1.addon_hookup"
+ slot_hookup[7]: "smalllight1.addon_hookup"
+ slot_hookup[8]: "smalllight1.addon_hookup"
+ slot_hookup[9]: "smalllight1.addon_hookup"
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/truck/iveco.sway/accessory/sideskrt_bar/hss_paint1.sii"
+ refund: 5460
+}
+
+vehicle_addon_accessory : _nameless.191.6a42.31a0 {
+ slot_name: 6
+ slot_name[0]: slot_0
+ slot_name[1]: slot_1
+ slot_name[2]: slot_2
+ slot_name[3]: slot_3
+ slot_name[4]: slot_4
+ slot_name[5]: slot_5
+ slot_hookup: 6
+ slot_hookup[0]: "light1.addon_hookup"
+ slot_hookup[1]: "light1.addon_hookup"
+ slot_hookup[2]: "light1.addon_hookup"
+ slot_hookup[3]: "light1.addon_hookup"
+ slot_hookup[4]: "light1.addon_hookup"
+ slot_hookup[5]: "light1.addon_hookup"
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xf_euro6/accessory/r_grill/shape6.sii"
+ refund: 2940
+}
+
+vehicle_addon_accessory : _nameless.191.6a42.3a60 {
+ slot_name: 6
+ slot_name[0]: slot_0
+ slot_name[1]: slot_1
+ slot_name[2]: slot_2
+ slot_name[3]: slot_3
+ slot_name[4]: slot_4
+ slot_name[5]: slot_5
+ slot_hookup: 6
+ slot_hookup[0]: "smalllight1.addon_hookup"
+ slot_hookup[1]: "smalllight1.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: "smalllight1.addon_hookup"
+ slot_hookup[5]: "smalllight1.addon_hookup"
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xf_euro6/accessory/r_grill/shape6.sii"
+ refund: 2940
+}
+
+vehicle_addon_accessory : _nameless.190.df5b.2a30 {
+ slot_name: 6
+ slot_name[0]: slot_0
+ slot_name[1]: slot_1
+ slot_name[2]: slot_2
+ slot_name[3]: slot_3
+ slot_name[4]: slot_4
+ slot_name[5]: slot_5
+ slot_hookup: 6
+ slot_hookup[0]: "smalllight1.addon_hookup"
+ slot_hookup[1]: "smalllight1.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: "smalllight1.addon_hookup"
+ slot_hookup[5]: "smalllight1.addon_hookup"
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xf_euro6/accessory/r_grill/shape6.sii"
+ refund: 2940
+}
+
+vehicle_addon_accessory : _nameless.190.df5b.2ad0 {
+ slot_name: 6
+ slot_name[0]: slot_0
+ slot_name[1]: slot_1
+ slot_name[2]: slot_2
+ slot_name[3]: slot_3
+ slot_name[4]: slot_4
+ slot_name[5]: slot_5
+ slot_hookup: 6
+ slot_hookup[0]: "smalllight1.addon_hookup"
+ slot_hookup[1]: "smalllight1.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: "smalllight1.addon_hookup"
+ slot_hookup[5]: "smalllight1.addon_hookup"
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xf_euro6/accessory/r_grill/shape6.sii"
+ refund: 2940
+}
+
+vehicle_addon_accessory : _nameless.190.df5b.2d50 {
+ slot_name: 6
+ slot_name[0]: slot_0
+ slot_name[1]: slot_1
+ slot_name[2]: slot_2
+ slot_name[3]: slot_3
+ slot_name[4]: slot_4
+ slot_name[5]: slot_5
+ slot_hookup: 6
+ slot_hookup[0]: "smalllight1.addon_hookup"
+ slot_hookup[1]: "smalllight1.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: "smalllight1.addon_hookup"
+ slot_hookup[5]: "smalllight1.addon_hookup"
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xf_euro6/accessory/r_grill/shape6.sii"
+ refund: 2940
+}
+
+vehicle_addon_accessory : _nameless.18d.9dda.3280 {
+ slot_name: 6
+ slot_name[0]: slot_0
+ slot_name[1]: slot_1
+ slot_name[2]: slot_2
+ slot_name[3]: slot_3
+ slot_name[4]: slot_4
+ slot_name[5]: slot_5
+ slot_hookup: 6
+ slot_hookup[0]: "smalllight1.addon_hookup"
+ slot_hookup[1]: "smalllight1.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: "smalllight1.addon_hookup"
+ slot_hookup[5]: "smalllight1.addon_hookup"
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xf_euro6/accessory/r_grill/shape6.sii"
+ refund: 2940
+}
+
+vehicle_addon_accessory : _nameless.18d.9dda.3be0 {
+ slot_name: 6
+ slot_name[0]: slot_0
+ slot_name[1]: slot_1
+ slot_name[2]: slot_2
+ slot_name[3]: slot_3
+ slot_name[4]: slot_4
+ slot_name[5]: slot_5
+ slot_hookup: 6
+ slot_hookup[0]: "smalllight1.addon_hookup"
+ slot_hookup[1]: "smalllight1.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: "smalllight1.addon_hookup"
+ slot_hookup[5]: "smalllight1.addon_hookup"
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xf_euro6/accessory/r_grill/shape6.sii"
+ refund: 2940
+}
+
+vehicle_addon_accessory : _nameless.18d.9dda.3f00 {
+ slot_name: 6
+ slot_name[0]: slot_0
+ slot_name[1]: slot_1
+ slot_name[2]: slot_2
+ slot_name[3]: slot_3
+ slot_name[4]: slot_4
+ slot_name[5]: slot_5
+ slot_hookup: 6
+ slot_hookup[0]: "smalllight1.addon_hookup"
+ slot_hookup[1]: "smalllight1.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: "smalllight1.addon_hookup"
+ slot_hookup[5]: "smalllight1.addon_hookup"
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xf_euro6/accessory/r_grill/shape6.sii"
+ refund: 2940
+}
+
+vehicle_addon_accessory : _nameless.190.d251.1440 {
+ slot_name: 6
+ slot_name[0]: slot_0
+ slot_name[1]: slot_1
+ slot_name[2]: slot_2
+ slot_name[3]: slot_3
+ slot_name[4]: slot_4
+ slot_name[5]: slot_5
+ slot_hookup: 6
+ slot_hookup[0]: "smalllight1.addon_hookup"
+ slot_hookup[1]: "smalllight1.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: "smalllight1.addon_hookup"
+ slot_hookup[5]: "smalllight1.addon_hookup"
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xf_euro6/accessory/r_grill/shape6.sii"
+ refund: 2940
+}
+
+vehicle_addon_accessory : _nameless.191.4669.cd20 {
+ slot_name: 6
+ slot_name[0]: slot_0
+ slot_name[1]: slot_1
+ slot_name[2]: slot_2
+ slot_name[3]: slot_3
+ slot_name[4]: slot_4
+ slot_name[5]: slot_5
+ slot_hookup: 6
+ slot_hookup[0]: "smalllight1.addon_hookup"
+ slot_hookup[1]: "smalllight1.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: "smalllight1.addon_hookup"
+ slot_hookup[5]: "smalllight1.addon_hookup"
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xf_euro6/accessory/r_grill/shape6.sii"
+ refund: 2940
+}
+
+vehicle_addon_accessory : _nameless.191.4669.dc20 {
+ slot_name: 6
+ slot_name[0]: slot_0
+ slot_name[1]: slot_1
+ slot_name[2]: slot_2
+ slot_name[3]: slot_3
+ slot_name[4]: slot_4
+ slot_name[5]: slot_5
+ slot_hookup: 6
+ slot_hookup[0]: "smalllight1.addon_hookup"
+ slot_hookup[1]: "smalllight1.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: "smalllight1.addon_hookup"
+ slot_hookup[5]: "smalllight1.addon_hookup"
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xf_euro6/accessory/r_grill/shape6.sii"
+ refund: 2940
+}
+
+vehicle_addon_accessory : _nameless.191.4669.ce60 {
+ slot_name: 6
+ slot_name[0]: slot_0
+ slot_name[1]: slot_1
+ slot_name[2]: slot_2
+ slot_name[3]: slot_3
+ slot_name[4]: slot_4
+ slot_name[5]: slot_5
+ slot_hookup: 6
+ slot_hookup[0]: "smalllight1.addon_hookup"
+ slot_hookup[1]: "smalllight1.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: "smalllight1.addon_hookup"
+ slot_hookup[5]: "smalllight1.addon_hookup"
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xf_euro6/accessory/r_grill/shape6.sii"
+ refund: 2940
+}
+
+vehicle_addon_accessory : _nameless.191.4669.e6c0 {
+ slot_name: 6
+ slot_name[0]: slot_0
+ slot_name[1]: slot_1
+ slot_name[2]: slot_2
+ slot_name[3]: slot_3
+ slot_name[4]: slot_4
+ slot_name[5]: slot_5
+ slot_hookup: 6
+ slot_hookup[0]: "smalllight1.addon_hookup"
+ slot_hookup[1]: "smalllight1.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: "smalllight1.addon_hookup"
+ slot_hookup[5]: "smalllight1.addon_hookup"
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xf_euro6/accessory/r_grill/shape6.sii"
+ refund: 2940
+}
+
+vehicle_addon_accessory : _nameless.191.4669.e800 {
+ slot_name: 2
+ slot_name[0]: slot_6
+ slot_name[1]: slot_5
+ slot_hookup: 2
+ slot_hookup[0]: "bibendum.addon_hookup"
+ slot_hookup[1]: "bibendum.addon_hookup"
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/renault.magnum/accessory/r_grill/shape2.sii"
+ refund: 2910
+}

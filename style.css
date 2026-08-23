@@ -1018,10 +1018,10 @@ form.sign-in-form {
 .project-card:hover { transform: translateY(-4px); }
 .project-card:focus-visible { outline: 2px solid #e9b875; outline-offset: 3px; }
 .project-card-wide { grid-column: span 1; }
-.project-card-atlas { background-image: url("./img/truck01.png"); }
-.project-card-tide { background-image: url("./img/trailer01.png"); }
-.project-card-field { background-image: url("https://images.unsplash.com/photo-1490730141103-6cac27aea3c7?auto=format&fit=crop&w=900&q=82"); }
-.project-card-north { background-image: url("https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=900&q=82"); }
+.project-card-atlas { background-image: url("./img/full-trucks-front.png"); }
+.project-card-tide { background-image: url("./img/full-trailers-front.png"); }
+.project-card-field { background-image: url("./img/lattice-neon-grid.svg"); }
+.project-card-north { background-image: url("./img/chrome-inferno.svg"); }
 
 .project-card-top {
   display: flex;
