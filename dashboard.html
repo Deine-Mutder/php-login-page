@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-i18n="dashboard.globalChat">Hello:)</title>
+    <title>Hello:)</title>
     <link rel="stylesheet" type="text/css" href="./style.css" />
     <script
       src="https://kit.fontawesome.com/64d58efce2.js"
@@ -23,16 +23,16 @@
         <!-- User Avatar Menu Dropdown -->
         <div class="profile-menu-container">
           <button class="profile-trigger-btn" id="profile-trigger">
-            <span class="user-nav-name" id="nav-username" data-i18n="dashboard.loading">Loading...</span>
+            <span class="user-nav-name" id="nav-username">Loading...</span>
             <div class="user-nav-avatar" id="nav-avatar">-</div>
           </button>
           
           <div class="dropdown-menu" id="dropdown-menu">
             <button id="edit-profile-opt">
-              <i class="fas fa-user-edit"></i> <span data-i18n="dashboard.editProfile">Edit profile</span>
+              <i class="fas fa-user-edit"></i> <span>Edit profile</span>
             </button>
             <button id="logout-btn">
-              <i class="fas fa-sign-out-alt"></i> <span data-i18n="dashboard.logout">Log out</span>
+              <i class="fas fa-sign-out-alt"></i> <span>Log out</span>
             </button>
           </div>
         </div>
@@ -48,7 +48,7 @@
             <h1 id="welcome-title">Welcome!</h1>
             <p>If you want Noodle you can go to Rollin Noodle.</p>
             <button class="btn chat-enter-btn dashboard-chat-launch" id="enter-chat-btn">
-              <i class="fas fa-arrow-right"></i> <span data-i18n="dashboard.enterChat">Join Chat Room</span>
+              <i class="fas fa-arrow-right"></i> <span>Join Chat Room</span>
             </button>
           </div>
           <section class="project-overview" aria-labelledby="project-overview-title">
@@ -89,10 +89,10 @@
           <div class="chat-box-container">
             <div class="chat-header">
               <button class="chat-back-btn" id="chat-back-btn">
-                <i class="fas fa-arrow-left"></i> <span data-i18n="dashboard.back">Back</span>
+                <i class="fas fa-arrow-left"></i> <span>Back</span>
               </button>
               <div class="chat-header-info">
-                <h3 data-i18n="dashboard.globalChat">Global Chat Room</h3>
+                <h3>Global Chat Room</h3>
               </div>
             </div>
             
@@ -107,11 +107,10 @@
                   class="chat-input-field"
                   id="chat-input"
                   placeholder="Write a message..."
-                  data-i18n-placeholder="dashboard.messagePlaceholder"
                   required
                   autocomplete="off"
                 />
-                <button type="submit" class="chat-send-btn" title="Send message" aria-label="Send message" data-i18n-title="dashboard.send">
+                <button type="submit" class="chat-send-btn" title="Send message" aria-label="Send message">
                   <span aria-hidden="true">➤</span>
                 </button>
               </form>
@@ -125,31 +124,29 @@
       <div class="modal-overlay" id="profile-modal">
         <div class="modal-box">
           <div class="modal-header">
-            <h3 data-i18n="dashboard.editTitle">Edit profile</h3>
+            <h3>Edit profile</h3>
             <button class="modal-close-btn" id="modal-close-btn">
               <i class="fas fa-times"></i>
             </button>
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <label for="profile-name-input" data-i18n="dashboard.displayName">Display name</label>
-              <input type="text" id="profile-name-input" placeholder="Your name" data-i18n-placeholder="dashboard.yourName" required />
+              <label for="profile-name-input">Display name</label>
+              <input type="text" id="profile-name-input" placeholder="Your name" required />
             </div>
             <div class="form-group">
-              <label for="profile-avatar-input" data-i18n="dashboard.avatarUrl">Profile image URL</label>
+              <label for="profile-avatar-input">Profile image URL</label>
               <input type="url" id="profile-avatar-input" placeholder="https://example.com/avatar.jpg" />
             </div>
             <div class="modal-actions">
-              <button class="btn btn-secondary" id="modal-cancel-btn" data-i18n="dashboard.cancel">Cancel</button>
-              <button class="btn" id="modal-save-btn" data-i18n="dashboard.save">Save</button>
+              <button class="btn btn-secondary" id="modal-cancel-btn">Cancel</button>
+              <button class="btn" id="modal-save-btn">Save</button>
             </div>
           </div>
         </div>
       </div>
 
     </div>
-
-    <script src="./language.js"></script>
 
     <!-- Firebase Script Logic -->
     <script type="module">
@@ -171,7 +168,6 @@
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
       const db = getFirestore(app);
-      const t = window.translate;
 
       // DOM Elements
       const containerElement = document.querySelector(".container");
@@ -230,7 +226,7 @@
 
       // 1. Fetch profile details from Firestore and update UI
       async function updateUserInfoUI(user) {
-        let displayName = user.displayName || (window.appLanguage === "de" ? "Benutzer" : "User");
+        let displayName = user.displayName || "User";
         let photoURL = user.photoURL || "";
 
         try {
@@ -255,7 +251,7 @@
         }
 
         // Update Landing panel welcome card
-        welcomeTitle.textContent = t("dashboard.welcome", { name: displayName });
+        welcomeTitle.textContent = `Welcome back, ${displayName}!`;
         if (photoURL) {
           welcomeAvatarLarge.innerHTML = `<img src="${photoURL}" alt="avatar" />`;
         } else {
@@ -308,7 +304,7 @@
         const avatarUrl = profileAvatarInput.value.trim();
 
         if (!name) {
-          alert(t("dashboard.nameRequired"));
+          alert("Please enter a display name.");
           return;
         }
 
@@ -331,7 +327,7 @@
           closeModal();
         } catch (error) {
           console.error("Failed to save profile:", error);
-          alert(t("dashboard.profileError"));
+          alert("Profile could not be saved.");
         }
       });
 
@@ -396,7 +392,7 @@
 
         const senderName = document.createElement("span");
         senderName.className = "msg-sender";
-        senderName.textContent = isOutgoing ? t("dashboard.you") : (data.displayName || t("dashboard.anonymous"));
+        senderName.textContent = isOutgoing ? "You" : (data.displayName || "Anonymous");
         meta.appendChild(senderName);
 
         if (data.createdAt) {
@@ -411,15 +407,15 @@
           const deleteButton = document.createElement("button");
           deleteButton.className = "msg-delete-btn";
           deleteButton.type = "button";
-          deleteButton.title = t("dashboard.delete");
-          deleteButton.setAttribute("aria-label", t("dashboard.delete"));
-          deleteButton.textContent = t("dashboard.delete");
+          deleteButton.title = "Delete";
+          deleteButton.setAttribute("aria-label", "Delete");
+          deleteButton.textContent = "Delete";
           deleteButton.addEventListener("click", async () => {
             try {
               await deleteDoc(doc(db, "messages", messageId));
             } catch (error) {
               console.error("Failed to delete message:", error);
-              alert(t("dashboard.deleteError"));
+              alert("Message could not be deleted.");
             }
           });
           meta.appendChild(deleteButton);
@@ -453,7 +449,7 @@
           // Fetch current profile to ensure it is always fresh in messages
           const userDocRef = doc(db, "users", currentUser.uid);
           const userSnap = await getDoc(userDocRef);
-          let displayName = currentUser.displayName || (window.appLanguage === "de" ? "Benutzer" : "User");
+          let displayName = currentUser.displayName || "User";
           let photoURL = currentUser.photoURL || "";
 
           if (userSnap.exists()) {
@@ -473,7 +469,7 @@
 
         } catch (error) {
           console.error("Failed to send message:", error);
-          alert(t("dashboard.sendError"));
+          alert("Message could not be sent.");
         }
       });
 

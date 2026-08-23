@@ -5,7 +5,6 @@ const {
     signInWithEmailAndPassword,
     updateProfile
 } = window;
-const t = window.translate;
 
 // DOM Elements for Theme and Layout
 const sign_in_btn = document.querySelector("#sign-in-btn");
@@ -224,7 +223,7 @@ signup_form.addEventListener("submit", (e) => {
     const password = signup_password.value;
 
     if (!auth || !createUserWithEmailAndPassword || !updateProfile) {
-        showFormMessage("signup", t("auth.initError"), "error");
+        showFormMessage("signup", "Firebase Authentication was not initialized correctly.", "error");
         return;
     }
 
@@ -235,7 +234,7 @@ signup_form.addEventListener("submit", (e) => {
             return updateProfile(user, {
                 displayName: username
             }).then(() => {
-                showFormMessage("signup", t("auth.signupSuccess"), "success");
+                showFormMessage("signup", "Registration successful! Please sign in now.", "success");
                 signup_form.reset();
                 
                 // Delay switching back to Login mode slightly so the user sees the inline success message
@@ -246,20 +245,20 @@ signup_form.addEventListener("submit", (e) => {
         })
         .catch((error) => {
             console.error("Sign Up Error:", error);
-            let errorMessage = t("auth.signupFailed");
+            let errorMessage = "Registration failed.";
             
             switch (error.code) {
                 case "auth/email-already-in-use":
-                    errorMessage = t("auth.emailInUse");
+                    errorMessage = "This email address is already in use.";
                     break;
                 case "auth/invalid-email":
-                    errorMessage = t("auth.invalidEmail");
+                    errorMessage = "The email address is invalid.";
                     break;
                 case "auth/weak-password":
-                    errorMessage = t("auth.weakPassword");
+                    errorMessage = "The password is too weak (at least 6 characters).";
                     break;
                 case "auth/operation-not-allowed":
-                    errorMessage = t("auth.notEnabled");
+                    errorMessage = "Email/password registration is not enabled in Firebase.";
                     break;
                 default:
                     errorMessage = error.message;
@@ -276,32 +275,32 @@ signin_form.addEventListener("submit", (e) => {
     const password = signin_password.value;
 
     if (!auth || !signInWithEmailAndPassword) {
-        showFormMessage("signin", t("auth.initError"), "error");
+        showFormMessage("signin", "Firebase Authentication was not initialized correctly.", "error");
         return;
     }
 
     signInWithEmailAndPassword(auth, email, password)
         .then(() => {
-            showToast(t("auth.loginSuccess"), "success");
+            showToast("Signed in successfully! Redirecting...", "success");
             setTimeout(() => {
                 window.location.href = "dashboard.html";
             }, 1200);
         })
         .catch((error) => {
             console.error("Sign In Error:", error);
-            let errorMessage = t("auth.loginFailed");
+            let errorMessage = "Login failed.";
 
             switch (error.code) {
                 case "auth/user-not-found":
                 case "auth/wrong-password":
                 case "auth/invalid-credential":
-                    errorMessage = t("auth.credentials");
+                    errorMessage = "The email or password is incorrect.";
                     break;
                 case "auth/invalid-email":
-                    errorMessage = t("auth.invalidEmail");
+                    errorMessage = "The email address is invalid.";
                     break;
                 case "auth/user-disabled":
-                    errorMessage = t("auth.disabled");
+                    errorMessage = "This user has been disabled.";
                     break;
                 default:
                     errorMessage = error.message;
