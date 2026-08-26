@@ -83,6 +83,23 @@
               </article>
             </div>
           </section>
+
+          <!-- Community Stats: Registered Users -->
+          <section class="community-stats" aria-labelledby="community-stats-title">
+            <div class="community-stats-card">
+              <div class="community-stats-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="community-stats-body">
+                <span class="project-eyebrow">Community</span>
+                <h2 id="community-stats-title">Registered Users</h2>
+              </div>
+              <div class="community-stats-count">
+                <span class="community-stats-number" id="registered-user-count">—</span>
+                <span class="community-stats-label">members</span>
+              </div>
+            </div>
+          </section>
         </section>
 
         <!-- 2. Real-time Chat Panel -->
@@ -266,6 +283,7 @@
         if (user) {
           currentUser = user;
           await updateUserInfoUI(user);
+          startUserCountListener();
         } else {
           // Unsubscribe chat listener if active
           if (unsubscribeChat) {
@@ -275,6 +293,25 @@
           window.location.href = "index.html";
         }
       });
+
+      // 8. Live Registered User Count
+      let unsubscribeUserCount = null;
+      const userCountEl = document.getElementById("registered-user-count");
+
+      function startUserCountListener() {
+        if (unsubscribeUserCount) return;
+
+        unsubscribeUserCount = onSnapshot(
+          collection(db, "users"),
+          (snapshot) => {
+            userCountEl.textContent = snapshot.size;
+          },
+          (error) => {
+            console.error("Failed to listen to user count:", error);
+            userCountEl.textContent = "—";
+          }
+        );
+      }
 
       // 2. Dropdown Menu Toggle
       profileTrigger.addEventListener("click", (e) => {

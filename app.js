@@ -227,12 +227,25 @@ signup_form.addEventListener("submit", (e) => {
         return;
     }
 
+    const { db } = window;
+    const { doc, setDoc, serverTimestamp } = window._firestoreHelpers || {};
+
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
             // Update displayName with user-provided username
             return updateProfile(user, {
                 displayName: username
+            }).then(() => {
+                // Create a Firestore user document so the user count can be tracked live
+                if (db && doc && setDoc && serverTimestamp) {
+                    return setDoc(doc(db, "users", user.uid), {
+                        displayName: username,
+                        email: email,
+                        photoURL: "",
+                        createdAt: serverTimestamp()
+                    });
+                }
             }).then(() => {
                 showFormMessage("signup", "Registration successful! Please sign in now.", "success");
                 signup_form.reset();
@@ -279,8 +292,29 @@ signin_form.addEventListener("submit", (e) => {
         return;
     }
 
+    const { db } = window;
+    const { doc, getDoc, setDoc, serverTimestamp } = window._firestoreHelpers || {};
+
     signInWithEmailAndPassword(auth, email, password)
-        .then(() => {
+        .then(async (userCredential) => {
+            // Ensure the user has a Firestore document (for existing users registered before this feature)
+            if (db && doc && getDoc && setDoc && serverTimestamp) {
+                try {
+                    const user = userCredential.user;
+                    const userDocRef = doc(db, "users", user.uid);
+                    const userSnap = await getDoc(userDocRef);
+                    if (!userSnap.exists()) {
+                        await setDoc(userDocRef, {
+                            displayName: user.displayName || "",
+                            email: user.email || "",
+                            photoURL: user.photoURL || "",
+                            createdAt: serverTimestamp()
+                        });
+                    }
+                } catch (err) {
+                    console.error("Failed to ensure Firestore user document:", err);
+                }
+            }
             showToast("Signed in successfully! Redirecting...", "success");
             setTimeout(() => {
                 window.location.href = "dashboard.html";

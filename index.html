@@ -93,6 +93,7 @@
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
       import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+      import { getFirestore, doc, getDoc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 
       const firebaseConfig = {
         apiKey: "AIzaSyBU7Bs4P7M_kTkc2bs0rWnjEClQhFUHVrg",
@@ -106,12 +107,15 @@
 
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
+      const db = getFirestore(app);
 
       // Expose Firebase to window for app.js
       window.auth = auth;
+      window.db = db;
       window.createUserWithEmailAndPassword = createUserWithEmailAndPassword;
       window.signInWithEmailAndPassword = signInWithEmailAndPassword;
       window.updateProfile = updateProfile;
+      window._firestoreHelpers = { doc, getDoc, setDoc, serverTimestamp };
     </script>
 
     <script type="module" src="./app.js"></script>
