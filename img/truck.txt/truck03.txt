@@ -1,0 +1,464 @@
+vehicle_accessory : _nameless.1e9.37d0.df60 {
+ data_path: "/def/vehicle/truck/mercedes.actros2014/data.sii"
+ refund: 0
+}
+
+vehicle_accessory : _nameless.1e9.37d0.dea0 {
+ data_path: "/def/vehicle/truck/mercedes.actros2014/cabin/gigaspace.sii"
+ refund: 61320
+}
+
+vehicle_accessory : _nameless.1e9.37d0.d860 {
+ data_path: "/def/vehicle/truck/mercedes.actros2014/head_light/xenon.sii"
+ refund: 600
+}
+
+vehicle_wheel_accessory : _nameless.1e9.37da.2090 {
+ offset: 0
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/f_tire/1.sii"
+ refund: 1430
+}
+
+vehicle_wheel_accessory : _nameless.1e9.37da.2150 {
+ offset: 0
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/r_tire/1.sii"
+ refund: 3640
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.5340 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/doorhndl/shape2.sii"
+ refund: 1320
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.5200 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/mirror/shape2.sii"
+ refund: 4980
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.62e0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/s_mirror/shape1.sii"
+ refund: 570
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.53e0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/f_fender_chs/paint.sii"
+ refund: 0
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.5c00 {
+ slot_name: 2
+ slot_name[0]: light_h_0
+ slot_name[1]: light_h_0
+ slot_hookup: 2
+ slot_hookup[0]: mp5_led
+ slot_hookup[1]: "drl.mercedes.addon_hookup"
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/f_light_chs/stock.sii"
+ refund: 600
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.5d40 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/f_bumper/paint.sii"
+ refund: 1125
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.5660 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/badge_a/badge_25xx.sii"
+ refund: 0
+}
+
+vehicle_accessory : _nameless.1e9.37d0.dc60 {
+ data_path: "/def/vehicle/truck/mercedes.actros2014/chassis/6x2_taglift.sii"
+ refund: 42120
+}
+
+vehicle_wheel_accessory : _nameless.1e9.37da.35f0 {
+ offset: 2
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/r_tire/1.sii"
+ refund: 3640
+}
+
+vehicle_accessory : _nameless.1e9.37d0.db20 {
+ data_path: "/def/vehicle/truck/mercedes.actros2014/engine/engine_1863.sii"
+ refund: 23160
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.5e80 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/badge_b/badge_xx63.sii"
+ refund: 0
+}
+
+vehicle_accessory : _nameless.1e9.37d0.e0e0 {
+ data_path: "/def/vehicle/truck/mercedes.actros2014/transmission/allison_retarder.sii"
+ refund: 18000
+}
+
+vehicle_accessory : _nameless.1e9.37d0.dfa0 {
+ data_path: "/def/vehicle/truck/mercedes.actros2014/interior/standard.sii"
+ refund: 23520
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.69c0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/sunshld/sunshield_01_paint.sii"
+ refund: 2760
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.5480 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/frntglss_mid/merc_light.sii"
+ refund: 480
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.6c40 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/s_strip/paint.sii"
+ refund: 1500
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.66a0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/f_wnd_frame/paint.sii"
+ refund: 1760
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.50c0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/f_logo/under_lit.sii"
+ refund: 500
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.6ce0 {
+ slot_name: 6
+ slot_name[0]: slot_18
+ slot_name[1]: slot_23
+ slot_name[2]: slot_28
+ slot_name[3]: slot_27
+ slot_name[4]: slot_13
+ slot_name[5]: slot_20
+ slot_hookup: 6
+ slot_hookup[0]: "smalllight5.addon_hookup"
+ slot_hookup[1]: "smalllight5.addon_hookup"
+ slot_hookup[2]: "smalllight5.addon_hookup"
+ slot_hookup[3]: "smalllight5.addon_hookup"
+ slot_hookup[4]: "smalllight5.addon_hookup"
+ slot_hookup[5]: "smalllight5.addon_hookup"
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/f_intake_chs/paint.sii"
+ refund: 1050
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.64c0 {
+ slot_name: 8
+ slot_name[0]: slot_2
+ slot_name[1]: slot_7
+ slot_name[2]: slot_4
+ slot_name[3]: slot_5
+ slot_name[4]: slot_12
+ slot_name[5]: slot_3
+ slot_name[6]: slot_9
+ slot_name[7]: slot_10
+ slot_hookup: 8
+ slot_hookup[0]: "smalllight5.addon_hookup"
+ slot_hookup[1]: "smalllight5.addon_hookup"
+ slot_hookup[2]: "smalllight5.addon_hookup"
+ slot_hookup[3]: "smalllight5.addon_hookup"
+ slot_hookup[4]: "smalllight5.addon_hookup"
+ slot_hookup[5]: "smalllight5.addon_hookup"
+ slot_hookup[6]: "smalllight5.addon_hookup"
+ slot_hookup[7]: "smalllight5.addon_hookup"
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/f_intake_cab/paint.sii"
+ refund: 1050
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.5160 {
+ slot_name: 2
+ slot_name[0]: slot_34
+ slot_name[1]: slot_36
+ slot_hookup: 2
+ slot_hookup[0]: "smalllight8.addon_hookup"
+ slot_hookup[1]: "smalllight7.addon_hookup"
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/b_grill/hss_paint1.sii"
+ refund: 3300
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.6740 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/f_mudflap/mb.sii"
+ refund: 225
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.7000 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/doorstep/shape2.sii"
+ refund: 1980
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.6060 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/f_fender_cab/paint.sii"
+ refund: 3240
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.5fc0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/r_horn/horn_07smsb.sii"
+ refund: 990
+}
+
+vehicle_wheel_accessory : _nameless.1e9.37da.2e10 {
+ offset: 0
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/f_disc/front_disc_07_paintable.sii"
+ refund: 4425
+}
+
+vehicle_wheel_accessory : _nameless.1e9.37da.2450 {
+ offset: 0
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/f_nuts/front_nuts_03_paintable.sii"
+ refund: 870
+}
+
+vehicle_wheel_accessory : _nameless.1e9.37da.2870 {
+ offset: 0
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/f_hub/front_hub_03_paintable.sii"
+ refund: 750
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.5ca0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/sideskirt/6x2_paint_2.sii"
+ refund: 8000
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.6880 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/exhaust_m/exhaust_01.sii"
+ refund: 13200
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.6100 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/trlr_cables/exhst_1.sii"
+ refund: 0
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.67e0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/r_chs_cover/6x2_paint.sii"
+ refund: 7200
+}
+
+vehicle_wheel_accessory : _nameless.1e9.37da.2390 {
+ offset: 0
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/r_disc/rear_disc_02_paintable.sii"
+ refund: 6675
+}
+
+vehicle_wheel_accessory : _nameless.1e9.37da.36b0 {
+ offset: 0
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/r_nuts/rear_nuts_03_paintable.sii"
+ refund: 870
+}
+
+vehicle_wheel_accessory : _nameless.1e9.37da.2630 {
+ offset: 0
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/r_hub/rear_hub_scania_paintable.sii"
+ refund: 1050
+}
+
+vehicle_wheel_accessory : _nameless.1e9.37da.1f10 {
+ offset: 2
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/r_disc/rear_disc_02_paintable.sii"
+ refund: 6675
+}
+
+vehicle_wheel_accessory : _nameless.1e9.37da.27b0 {
+ offset: 2
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/r_nuts/rear_nuts_03_paintable.sii"
+ refund: 870
+}
+
+vehicle_wheel_accessory : _nameless.1e9.37da.2e70 {
+ offset: 2
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/r_hub/rear_hub_scania_paintable.sii"
+ refund: 1050
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.58e0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/r_fendr_top/6x2_paint.sii"
+ refund: 1760
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.61a0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/r_fender/6x2_paint.sii"
+ refund: 3680
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.6920 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/r_bumper/6x2_var3.sii"
+ refund: 5250
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.7320 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/r_mudflap/w_tugher.sii"
+ refund: 720
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.5980 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/curtain_f/curtain_mb.sii"
+ refund: 360
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.7500 {
+ slot_name: 5
+ slot_name[0]: slot_14
+ slot_name[1]: slot_1
+ slot_name[2]: slot_3
+ slot_name[3]: slot_2
+ slot_name[4]: slot_13
+ slot_hookup: 5
+ slot_hookup[0]: "toy_actr2014.mercedes.actros2014.addon_hookup"
+ slot_hookup[1]: "toy_next_s.addon_hookup"
+ slot_hookup[2]: "toy_next_r.addon_hookup"
+ slot_hookup[3]: "scaniatoy.addon_hookup"
+ slot_hookup[4]: "v_scout.addon_hookup"
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/set_dashbrd/narrow_plastic.sii"
+ refund: 500
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.6240 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/toystand/mb_cup.sii"
+ refund: 180
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.70a0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/intlight_bck/merc_logo_old.sii"
+ refund: 3600
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.6a60 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/l_horn/horn_07smso.sii"
+ refund: 870
+}
+
+vehicle_paint_job_accessory : _nameless.1e6.38d4.1150 {
+ mask_r_color: (&3b46eb61, &3c3391fa, &3d332380)
+ mask_g_color: (&3b46eb61, &3c3391fa, &3d332380)
+ mask_b_color: (&3b46eb61, &3c3391fa, &3d332380)
+ flake_color: (0, 1, 0)
+ flip_color: (1, 0, 0)
+ base_color: (0, 0, 0)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/paint_job/heavy_d4_a.sii"
+ refund: 10000
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.6b00 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/renault.premium/accessory/beacon/classic.sii"
+ refund: 720
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.6ec0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/f_logo/chrome.sii"
+ refund: 400
+}
+
+vehicle_addon_accessory : _nameless.1e9.37d9.6380 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/steering_w/standard.sii"
+ refund: 1200
+}
+
