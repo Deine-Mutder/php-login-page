@@ -1,0 +1,530 @@
+vehicle_accessory : _nameless.1e1.cbbe.8d40 {
+ data_path: "/def/vehicle/truck/scania.r_2016/data.sii"
+ refund: 0
+}
+
+vehicle_accessory : _nameless.1e1.cbbe.9600 {
+ data_path: "/def/vehicle/truck/volvo.fh_2024/transmission/allison_retarder.sii"
+ refund: 18000
+}
+
+vehicle_accessory : _nameless.1e1.cbbe.8fc0 {
+ data_path: "/def/vehicle/truck/volvo.fh_2024/engine/d17a780.sii"
+ refund: 25560
+}
+
+vehicle_accessory : _nameless.1e1.cbbe.9980 {
+ data_path: "/def/vehicle/truck/daf.2021/head_light/led.sii"
+ refund: 600
+}
+
+vehicle_wheel_accessory : _nameless.1e1.8448.11f0 {
+ offset: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/f_tire/385_55_michelin_xmulti_f.sii"
+ refund: 2370
+}
+
+vehicle_wheel_accessory : _nameless.1e1.8448.0e90 {
+ offset: 0
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/f_hub/front_hub_04_paintable.sii"
+ refund: 840
+}
+
+vehicle_wheel_accessory : _nameless.1e1.8448.1cd0 {
+ offset: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/f_nuts/front_nuts_02_chrome.sii"
+ refund: 1050
+}
+
+vehicle_wheel_accessory : _nameless.1e1.8448.1a30 {
+ offset: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/r_tire/315_70_michelin_xmulti_d.sii"
+ refund: 4850
+}
+
+vehicle_wheel_accessory : _nameless.1e1.8448.2270 {
+ offset: 0
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/r_hub/rear_hub_01_paintable.sii"
+ refund: 705
+}
+
+vehicle_wheel_accessory : _nameless.1e1.8448.1af0 {
+ offset: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/r_nuts/rear_nuts_02_chrome.sii"
+ refund: 375
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede4.2d10 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.2021/accessory/badge/badge_370.sii"
+ refund: 200
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede4.2c70 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xf_electric/accessory/doorstep/plastic.sii"
+ refund: 1860
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede4.3030 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xf_electric/accessory/f_bumper/paint.sii"
+ refund: 1425
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede4.2a90 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros/accessory/mirror/shape1.sii"
+ refund: 4800
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede4.2f90 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.2021/accessory/r_fender/plastic.sii"
+ refund: 960
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede4.2950 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xf_electric/accessory/r_mudflap/logo.sii"
+ refund: 360
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede4.2ef0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/scania.r_2016/accessory/s_mirror/stock.sii"
+ refund: 570
+}
+
+vehicle_accessory : _nameless.1e1.cbbe.9800 {
+ data_path: "/def/vehicle/truck/mercedes.actros/cabin/cabin_l.sii"
+ refund: 38760
+}
+
+vehicle_accessory : _nameless.1e1.cbbe.8f80 {
+ data_path: "/def/vehicle/truck/daf.xf_electric/chassis/4x2.sii"
+ refund: 29400
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede4.2b30 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.2021/accessory/trlr_cables/stock_xf.sii"
+ refund: 0
+}
+
+vehicle_accessory : _nameless.1e1.cbbe.9240 {
+ data_path: "/def/vehicle/truck/mercedes.actros/interior/highroof_ex.sii"
+ refund: 30360
+}
+
+vehicle_paint_job_accessory : _nameless.1e1.3ec0.39b0 {
+ mask_r_color: (&3eb8fd37, &3eb8fd37, &3eb8fd37)
+ mask_g_color: (&3cadd37f, &3cadd37f, &3cadd37f)
+ mask_b_color: (1, 0, 0)
+ flake_color: (0, 1, 0)
+ flip_color: (1, 0, 0)
+ base_color: (&3cadd37f, &3cadd37f, &3cadd37f)
+ data_path: "/def/vehicle/truck/mercedes.actros/paint_job/heavy_duty2_b.dlc_trailers.sii"
+ refund: 26600
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede4.29f0 {
+ slot_name: 8
+ slot_name[0]: slot_1
+ slot_name[1]: slot_5
+ slot_name[2]: slot_5
+ slot_name[3]: slot_0
+ slot_name[4]: slot_5
+ slot_name[5]: slot_0
+ slot_name[6]: slot_6
+ slot_name[7]: slot_5
+ slot_hookup: 8
+ slot_hookup[0]: "cyl01.addon_hookup"
+ slot_hookup[1]: "cyl01.addon_hookup"
+ slot_hookup[2]: ""
+ slot_hookup[3]: ""
+ slot_hookup[4]: ""
+ slot_hookup[5]: ""
+ slot_hookup[6]: ""
+ slot_hookup[7]: ""
+ paint_color: (0, 0, 0)
+ data_path: "/def/vehicle/truck/renault.t/accessory/r_grill/hss_paint2.sii"
+ refund: 3840
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede4.2bd0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xf_electric/accessory/sideskirt/paint_4x2.sii"
+ refund: 14800
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.ba10 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xd/accessory/f_bumper/paint.sii"
+ refund: 900
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.c050 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xf_electric/accessory/sideskrt_bar/aero_4x2.sii"
+ refund: 4560
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.b290 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.2021/accessory/sideskrt_bar/aero_4x2.sii"
+ refund: 4560
+}
+
+vehicle_drv_plate_accessory : _nameless.1e2.2966.27b0 {
+ text: ""
+ slot_name: 7
+ slot_name[0]: slot_9
+ slot_name[1]: slot_10
+ slot_name[2]: slot_0
+ slot_name[3]: slot_1
+ slot_name[4]: slot_2
+ slot_name[5]: slot_3
+ slot_name[6]: slot_4
+ slot_hookup: 7
+ slot_hookup[0]: "bibendum.addon_hookup"
+ slot_hookup[1]: "bibendum.addon_hookup"
+ slot_hookup[2]: ""
+ slot_hookup[3]: ""
+ slot_hookup[4]: ""
+ slot_hookup[5]: ""
+ slot_hookup[6]: ""
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros/accessory/r_grill/shape4_c.sii"
+ refund: 5580
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.c410 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/scania.r/accessory/r_horn/horn_05slns.sii"
+ refund: 990
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.b830 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/scania.r/accessory/l_horn/horn_05slns.sii"
+ refund: 990
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.c0f0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/volvo.fh16/accessory/f_bumper/stock2.sii"
+ refund: 900
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.be70 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xf_electric/accessory/f_fender_chs/paint_aero.sii"
+ refund: 3400
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.d270 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/scania.streamline/accessory/f_badge/frontbadge_kotr.sii"
+ refund: 165
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.c190 {
+ slot_name: 6
+ slot_name[0]: light_1
+ slot_name[1]: light_2
+ slot_name[2]: light_1
+ slot_name[3]: light_2
+ slot_name[4]: light_1
+ slot_name[5]: light_2
+ slot_hookup: 6
+ slot_hookup[0]: "smalllight1.addon_hookup"
+ slot_hookup[1]: "smalllight1.addon_hookup"
+ slot_hookup[2]: "smalllight1.addon_hookup"
+ slot_hookup[3]: "smalllight1.addon_hookup"
+ slot_hookup[4]: ""
+ slot_hookup[5]: ""
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/scania.s_2016/accessory/f_fender/stock_p.sii"
+ refund: 2560
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.c230 {
+ slot_name: 14
+ slot_name[0]: slot_36
+ slot_name[1]: slot_35
+ slot_name[2]: slot_32
+ slot_name[3]: slot_0
+ slot_name[4]: slot_31
+ slot_name[5]: slot_33
+ slot_name[6]: slot_34
+ slot_name[7]: slot_36
+ slot_name[8]: slot_35
+ slot_name[9]: slot_32
+ slot_name[10]: slot_0
+ slot_name[11]: slot_31
+ slot_name[12]: slot_33
+ slot_name[13]: slot_34
+ slot_hookup: 14
+ slot_hookup[0]: "poz_bok1.bluebus.addon_hookup"
+ slot_hookup[1]: "poz_bok1.bluebus.addon_hookup"
+ slot_hookup[2]: "poz_bok1.bluebus.addon_hookup"
+ slot_hookup[3]: "poz_bok1.bluebus.addon_hookup"
+ slot_hookup[4]: "poz_bok1.bluebus.addon_hookup"
+ slot_hookup[5]: "poz_bok1.bluebus.addon_hookup"
+ slot_hookup[6]: "poz_bok1.bluebus.addon_hookup"
+ slot_hookup[7]: "poz_bok1.bluebus.addon_hookup"
+ slot_hookup[8]: "poz_bok1.bluebus.addon_hookup"
+ slot_hookup[9]: "poz_bok1.bluebus.addon_hookup"
+ slot_hookup[10]: "poz_bok1.bluebus.addon_hookup"
+ slot_hookup[11]: "poz_bok1.bluebus.addon_hookup"
+ slot_hookup[12]: "poz_bok1.bluebus.addon_hookup"
+ slot_hookup[13]: "poz_bok1.bluebus.addon_hookup"
+ paint_color: (&3ba35e8c, &3ba35e8c, &3ba35e8c)
+ data_path: "/def/vehicle/truck/renault.t/accessory/sideskirt/4x2_plain.sii"
+ refund: 21200
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.d310 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.2021/accessory/sideskrt_bar/aero_4x2.sii"
+ refund: 4560
+}
+
+vehicle_wheel_accessory : _nameless.1e1.8448.1250 {
+ offset: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/f_disc/front_disc_05_chrome.sii"
+ refund: 3450
+}
+
+vehicle_wheel_accessory : _nameless.1e1.8448.1f10 {
+ offset: 0
+ paint_color: (&3a99d73a, &3dcf9964, &3eb063f8)
+ data_path: "/def/vehicle/f_cover/front_hub_cover_01.sii"
+ refund: 375
+}
+
+vehicle_wheel_accessory : _nameless.1e1.8448.2570 {
+ offset: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/r_disc/rear_disc_02_chrome.sii"
+ refund: 7350
+}
+
+vehicle_wheel_accessory : _nameless.1e1.8448.1f70 {
+ offset: 0
+ paint_color: (&3a9f22ac, &3dd1640d, &3eb18335)
+ data_path: "/def/vehicle/r_cover/rear_hub_cover_01.sii"
+ refund: 375
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.c2d0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/set_dashbrd/wide_plastic.sii"
+ refund: 730
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.cd70 {
+ slot_name: 4
+ slot_name[0]: slot_20
+ slot_name[1]: slot_23
+ slot_name[2]: slot_13
+ slot_name[3]: slot_18
+ slot_hookup: 4
+ slot_hookup[0]: ""
+ slot_hookup[1]: ""
+ slot_hookup[2]: ""
+ slot_hookup[3]: ""
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/f_intake_chs/paint.sii"
+ refund: 1050
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.cb90 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros/accessory/doorhndl/shape3.sii"
+ refund: 1680
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.bd30 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/s_mirror/shape1.sii"
+ refund: 570
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.b1f0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/badge_b/badge_xx48.sii"
+ refund: 0
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.b650 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/steering_w/standard.sii"
+ refund: 1200
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.c910 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/trlr_cables/stock.sii"
+ refund: 0
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.c730 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xf_electric/accessory/f_light_chs/stock.sii"
+ refund: 780
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.bf10 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros/accessory/f_logo/underlit.sii"
+ refund: 500
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.c5f0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/daf.xd/accessory/f_intake_chs/stock_25.sii"
+ refund: 1200
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.ce10 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros2014/accessory/f_bumper/paint.sii"
+ refund: 1125
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.ccd0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/man.tgx_2020/accessory/f_intake_chs/plastic_mat_std.sii"
+ refund: 375
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.bfb0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros/accessory/f_wnd_frame/paint_b_c.sii"
+ refund: 1760
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.d090 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros/accessory/s_strip/paint_b_c.sii"
+ refund: 1500
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.d1d0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros/accessory/f_wnd_frame/paint_b_c.sii"
+ refund: 1760
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.c370 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros/accessory/s_strip/paint_b_c.sii"
+ refund: 1500
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.b970 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros/accessory/f_bumper/paint_b_c.sii"
+ refund: 1125
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.d3b0 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros/accessory/f_intake_cab/paint_a.sii"
+ refund: 2100
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede3.d590 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros/accessory/set_lglass/cellphone_gps.sii"
+ refund: 300
+}
+
+vehicle_addon_accessory : _nameless.1e1.ede4.2e50 {
+ slot_name: 0
+ slot_hookup: 0
+ paint_color: (1, 1, 1)
+ data_path: "/def/vehicle/truck/mercedes.actros/accessory/sunshld/simple_paint.sii"
+ refund: 0
+}
