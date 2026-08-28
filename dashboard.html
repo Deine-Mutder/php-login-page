@@ -84,9 +84,23 @@
             </div>
           </section>
 
+          <!-- Save Editor Prompt -->
+          <section class="editor-prompt" aria-labelledby="editor-prompt-title">
+            <div class="editor-prompt-card">
+              <div class="editor-prompt-body">
+                <span class="project-eyebrow">Tools</span>
+                <h2 id="editor-prompt-title">Are you a Save editor?</h2>
+              </div>
+              <div class="editor-prompt-actions">
+                <button class="btn editor-prompt-yes" id="editor-yes-btn" type="button">Yes</button>
+                <button class="btn editor-prompt-no" id="editor-no-btn" type="button">No</button>
+              </div>
+            </div>
+          </section>
+
           <!-- Community Stats: Registered Users -->
           <section class="community-stats" aria-labelledby="community-stats-title">
-            <div class="community-stats-card">
+            <div class="community-stats-card" id="user-count-trigger" role="button" tabindex="0">
               <div class="community-stats-body">
                 <span class="project-eyebrow">Community</span>
                 <h2 id="community-stats-title">Registered Users</h2>
@@ -134,6 +148,21 @@
         </section>
 
       </main>
+
+      <!-- User List Overlay -->
+      <div class="modal-overlay" id="user-list-modal">
+        <div class="modal-box" style="max-width: 420px;">
+          <div class="modal-header">
+            <h3>Registered members</h3>
+            <button class="modal-close-btn" id="user-list-close" type="button" aria-label="Close">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="modal-body" style="max-height: 50vh; overflow-y: auto; padding: 8px;">
+            <div id="user-list-items"></div>
+          </div>
+        </div>
+      </div>
 
       <!-- 3. Edit Profile Modal Dialog -->
       <div class="modal-overlay" id="profile-modal">
@@ -291,9 +320,55 @@
         }
       });
 
-      // 8. Live Registered User Count
+      // 8. Live Registered User Count + User List
       let unsubscribeUserCount = null;
       const userCountEl = document.getElementById("registered-user-count");
+      const userListModal = document.getElementById("user-list-modal");
+      const userListItems = document.getElementById("user-list-items");
+      const userCountTrigger = document.getElementById("user-count-trigger");
+      const userListClose = document.getElementById("user-list-close");
+      let cachedUsers = [];
+
+      function renderUserList() {
+        userListItems.innerHTML = "";
+        cachedUsers.forEach((u) => {
+          const row = document.createElement("div");
+          row.className = "user-list-row";
+
+          const avatar = document.createElement("div");
+          avatar.className = "user-list-avatar";
+          if (u.photoURL) {
+            avatar.innerHTML = `<img src="${u.photoURL}" alt="${u.displayName}" />`;
+          } else {
+            avatar.textContent = (u.displayName || "B").charAt(0).toUpperCase();
+          }
+
+          const name = document.createElement("span");
+          name.className = "user-list-name";
+          name.textContent = u.displayName || "Anonymous";
+
+          const delBtn = document.createElement("button");
+          delBtn.className = "user-list-delete";
+          delBtn.type = "button";
+          delBtn.title = "Remove";
+          delBtn.setAttribute("aria-label", "Remove user");
+          delBtn.innerHTML = '<i class="fas fa-trash"></i>';
+          delBtn.addEventListener("click", async (e) => {
+            e.stopPropagation();
+            try {
+              await deleteDoc(doc(db, "users", u.id));
+            } catch (err) {
+              console.error("Failed to delete user doc:", err);
+              alert("Could not remove user.");
+            }
+          });
+
+          row.appendChild(avatar);
+          row.appendChild(name);
+          row.appendChild(delBtn);
+          userListItems.appendChild(row);
+        });
+      }
 
       function startUserCountListener() {
         if (unsubscribeUserCount) return;
@@ -302,6 +377,17 @@
           collection(db, "users"),
           (snapshot) => {
             userCountEl.textContent = snapshot.size;
+            cachedUsers = [];
+            snapshot.forEach((docSnap) => {
+              const d = docSnap.data();
+              cachedUsers.push({
+                id: docSnap.id,
+                displayName: d.displayName || "Anonymous",
+                photoURL: d.photoURL || ""
+              });
+            });
+            cachedUsers.sort((a, b) => a.displayName.localeCompare(b.displayName));
+            renderUserList();
           },
           (error) => {
             console.error("Failed to listen to user count:", error);
@@ -310,6 +396,23 @@
         );
       }
 
+      function toggleUserList() {
+        userListModal.classList.toggle("show");
+      }
+
+      userCountTrigger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleUserList();
+      });
+      userCountTrigger.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleUserList(); }
+      });
+      userListClose.addEventListener("click", () => {
+        userListModal.classList.remove("show");
+      });
+      userListModal.addEventListener("click", (e) => {
+        if (e.target === userListModal) userListModal.classList.remove("show");
+      });
       // 2. Dropdown Menu Toggle
       profileTrigger.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -517,6 +620,14 @@
           .catch((error) => {
             console.error("Sign Out Error:", error);
           });
+      });
+
+      // 8. Save Editor Prompt Buttons
+      document.getElementById("editor-yes-btn").addEventListener("click", () => {
+        window.location.href = "save-editor-tools.html";
+      });
+      document.getElementById("editor-no-btn").addEventListener("click", () => {
+        alert("OK");
       });
     </script>
   </body>

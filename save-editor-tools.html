@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Save Editor Tools</title>
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  </head>
+  <body>
+    <div class="container dashboard-page">
+      <!-- Header -->
+      <header class="dashboard-header">
+        <a class="logo-area" href="dashboard.html" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <i class="fas fa-comments"></i>
+          <h2>back Home</h2>
+        </a>
+        <a class="chat-back-btn" href="dashboard.html">
+          <i class="fas fa-arrow-left"></i> <span>Back</span>
+        </a>
+      </header>
+
+      <!-- Main Content -->
+      <main class="dashboard-views">
+        <section class="dashboard-panel active" id="landing-panel">
+          <div class="welcome-card dashboard-hero-copy">
+            <h1>Save Editor Tools</h1>
+            <p>Useful tools for ETS2 save editors — 3D model previews, color converters and more.</p>
+          </div>
+
+          <section class="project-overview" aria-labelledby="tools-overview-title">
+            <div class="project-overview-heading">
+              <div>
+                <span class="project-eyebrow">Toolbox</span>
+                <h2 id="tools-overview-title">Available Tools</h2>
+              </div>
+              <span class="project-count">02 tools</span>
+            </div>
+            <div class="project-grid">
+              <!-- Tool 1: 3D Model Viewer -->
+              <article class="project-card project-card-atlas" id="tool-model-viewer" tabindex="0" role="link">
+                <div class="project-card-top"><span>01</span><span class="project-status">Interactive</span></div>
+                <div>
+                  <span class="project-type">3D Viewer</span>
+                  <h3>GLB Model Viewer</h3>
+                  <p>Preview .glb truck models in 3D — rotate, zoom and inspect before editing.</p>
+                </div>
+                <span class="project-arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
+              </article>
+
+              <!-- Tool 2: HEX to SCS Converter -->
+              <article class="project-card project-card-field" id="tool-hex-converter" tabindex="0" role="link">
+                <div class="project-card-top"><span>02</span><span class="project-status">External</span></div>
+                <div>
+                  <span class="project-type">Converter</span>
+                  <h3>HEX → SCS Color</h3>
+                  <p>Convert HEX color codes to ETS2 SCS color format. Open-source tool on GitHub.</p>
+                </div>
+                <span class="project-arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
+              </article>
+            </div>
+          </section>
+        </section>
+      </main>
+
+      <!-- 3D Model Viewer Modal -->
+      <div class="modal-overlay" id="model-modal">
+        <div class="modal-box" style="max-width: 920px; padding: 20px;">
+          <div class="modal-header">
+            <h3>GLB Model Viewer</h3>
+            <button class="modal-close-btn" id="model-modal-close" type="button" aria-label="Close">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="modal-body" style="gap: 0;">
+            <model-viewer
+              id="model-viewer-el"
+              src="./img/scania.glb"
+              alt="3D truck model preview"
+              camera-controls
+              auto-rotate
+              shadow-intensity="1"
+              style="width: 100%; height: 60vh; background: #0b100f; border-radius: 12px;"
+            ></model-viewer>
+            <p style="margin-top: 12px; color: var(--muted); font-size: 0.82rem; text-align: center;">
+              Drag to rotate &middot; Scroll to zoom &middot; Right-drag to pan
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Apply saved theme
+      const containerElement = document.querySelector(".container");
+      const savedTheme = localStorage.getItem("login-page-theme");
+      if (savedTheme) {
+        containerElement.classList.add(savedTheme);
+      } else {
+        containerElement.classList.add("theme-red-black");
+      }
+
+      // Tool 1: Open 3D model viewer
+      const modelModal = document.getElementById("model-modal");
+      const modelModalClose = document.getElementById("model-modal-close");
+
+      const openModelViewer = () => {
+        modelModal.classList.add("show");
+      };
+      const closeModelViewer = () => {
+        modelModal.classList.remove("show");
+      };
+
+      const modelCard = document.getElementById("tool-model-viewer");
+      modelCard.addEventListener("click", openModelViewer);
+      modelCard.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModelViewer(); }
+      });
+
+      modelModalClose.addEventListener("click", closeModelViewer);
+      modelModal.addEventListener("click", (e) => { if (e.target === modelModal) closeModelViewer(); });
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModelViewer(); });
+
+      // Tool 2: Navigate to HEX → SCS converter detail page
+      const hexCard = document.getElementById("tool-hex-converter");
+      const openHexConverter = () => {
+        window.location.href = "hex-to-scs.html";
+      };
+      hexCard.addEventListener("click", openHexConverter);
+      hexCard.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openHexConverter(); }
+      });
+    </script>
+  </body>
+</html>

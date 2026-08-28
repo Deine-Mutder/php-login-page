@@ -14,6 +14,27 @@
       <div class="project-layout">
         <aside class="project-sidebar">
           <input class="project-search" id="project-search" type="search" placeholder="Search by brand or project name..." />
+          <div>
+            <div class="project-sidebar-label">Brands</div>
+            <div class="category-filter" id="brand-filter">
+              <button class="category-chip active" data-brand="all" type="button">All brands</button>
+              <button class="category-chip" data-brand="schwarzmuller" type="button">Schwarzmüller</button>
+              <button class="category-chip" data-brand="krone" type="button">Krone</button>
+              <button class="category-chip" data-brand="schmitz" type="button">Schmitz Cargobull</button>
+              <button class="category-chip" data-brand="kassbohrer" type="button">Kässbohrer</button>
+              <button class="category-chip" data-brand="feldbinder" type="button">Feldbinder</button>
+              <button class="category-chip" data-brand="tirsan" type="button">Tirsan</button>
+            </div>
+          </div>
+          <div>
+            <div class="project-sidebar-label">Trailer types</div>
+            <div class="category-filter" id="trailer-type-filter">
+              <button class="category-chip active" data-ttype="all" type="button">All trailers</button>
+              <button class="category-chip" data-ttype="single" type="button">Single trailer</button>
+              <button class="category-chip" data-ttype="double" type="button">Double trailer</button>
+              <button class="category-chip" data-ttype="triple" type="button">Triple trailer</button>
+            </div>
+          </div>
         </aside>
         <div class="project-content">
           <div class="project-results" id="project-results"></div>
@@ -24,11 +45,17 @@
         in any of these pages:
         full-trucks.html / full-trailers.html / truck-parts.html / trailer-parts.html
         Change the 5 values marked with ← CHANGE
+
+        data-brand: set to the trailer brand (schwarzmuller, krone, schmitz,
+        kassbohrer, feldbinder, tirsan). Must match a data-brand in #brand-filter.
+
+        data-ttype: set to the trailer type (single, double, triple).
+        Must match a data-ttype in #trailer-type-filter.
         ============================================================
         -->
 
         <!-- ==============================Trailer01============================== -->
-        <article class="post-card" data-title="Trailer 01" data-file="../save-edits/trailer01.txt">
+        <article class="post-card" data-brand="schmitz" data-ttype="single" data-title="Trailer 01" data-file="../save-edits/trailer01.txt">
           <img class="post-image" src="../img/trailer01.png" alt="Trailer 01 project" />
           <div class="post-info">
             <div class="post-meta"><span>Trailer 01</span><span>01</span></div>
@@ -39,7 +66,7 @@
         </article>
 
         <!-- ==============================Trailer02============================== -->
-        <article class="post-card" data-title="Trailer 02" data-file="../save-edits/trailer02.txt">
+        <article class="post-card" data-brand="krone" data-ttype="single" data-title="Trailer 02" data-file="../save-edits/trailer02.txt">
           <img class="post-image" src="../img/trailer02.png" alt="Trailer 02 project" />
           <div class="post-info">
             <div class="post-meta"><span>Trailer 02</span><span>02</span></div>

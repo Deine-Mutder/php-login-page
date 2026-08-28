@@ -13,7 +13,11 @@
 
   let activeTags = new Set();
   let activeCategory = "all";
+  let activeBrand = "all";
+  let activeTrailerType = "all";
   const categoryFilter = document.querySelector("#category-filter");
+  const brandFilter = document.querySelector("#brand-filter");
+  const trailerTypeFilter = document.querySelector("#trailer-type-filter");
 
   const collectTags = () => {
     const tags = new Set();
@@ -129,7 +133,9 @@
       const matchesCategory = activeCategory === "all"
         || (activeCategory === "silly" && card.dataset.category === "silly")
         || (activeCategory === "normal" && card.dataset.category !== "silly");
-      const match = matchesSearch && matchesTags && matchesCategory;
+      const matchesBrand = activeBrand === "all" || card.dataset.brand === activeBrand;
+      const matchesTrailerType = activeTrailerType === "all" || card.dataset.ttype === activeTrailerType;
+      const match = matchesSearch && matchesTags && matchesCategory && matchesBrand && matchesTrailerType;
       card.hidden = !match;
       if (match) visible += 1;
     });
@@ -144,6 +150,26 @@
       if (!chip) return;
       activeCategory = chip.dataset.cat;
       categoryFilter.querySelectorAll(".category-chip").forEach((c) => c.classList.toggle("active", c === chip));
+      updateResults();
+    });
+  }
+
+  if (brandFilter) {
+    brandFilter.addEventListener("click", (e) => {
+      const chip = e.target.closest(".category-chip");
+      if (!chip) return;
+      activeBrand = chip.dataset.brand;
+      brandFilter.querySelectorAll(".category-chip").forEach((c) => c.classList.toggle("active", c === chip));
+      updateResults();
+    });
+  }
+
+  if (trailerTypeFilter) {
+    trailerTypeFilter.addEventListener("click", (e) => {
+      const chip = e.target.closest(".category-chip");
+      if (!chip) return;
+      activeTrailerType = chip.dataset.ttype;
+      trailerTypeFilter.querySelectorAll(".category-chip").forEach((c) => c.classList.toggle("active", c === chip));
       updateResults();
     });
   }

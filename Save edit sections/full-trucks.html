@@ -24,6 +24,19 @@
         <aside class="project-sidebar">
           <input class="project-search" id="project-search" type="search" placeholder="Search by brand or project name..." />
           <div>
+            <div class="project-sidebar-label">Brands</div>
+            <div class="category-filter" id="brand-filter">
+              <button class="category-chip active" data-brand="all" type="button">All brands</button>
+              <button class="category-chip" data-brand="daf" type="button">DAF</button>
+              <button class="category-chip" data-brand="iveco" type="button">Iveco</button>
+              <button class="category-chip" data-brand="man" type="button">MAN</button>
+              <button class="category-chip" data-brand="mercedes" type="button">Mercedes-Benz</button>
+              <button class="category-chip" data-brand="renault" type="button">Renault</button>
+              <button class="category-chip" data-brand="scania" type="button">Scania</button>
+              <button class="category-chip" data-brand="volvo" type="button">Volvo</button>
+            </div>
+          </div>
+          <div>
             <div class="project-sidebar-label">Truck type</div>
             <div class="category-filter" id="category-filter">
               <button class="category-chip active" data-cat="all" type="button">All trucks</button>
@@ -40,17 +53,20 @@
         CARD TEMPLATE — copy & paste inside <main class="post-grid">
         Change the 5 values marked with ← CHANGE
 
+        data-brand: set to the truck brand (daf, iveco, man, mercedes,
+        renault, scania, volvo). Must match a data-brand in #brand-filter.
+
         SILLY TRUCKS: add  data-category="silly"  to the <article> tag.
         The card gets a red LED border and appears under "Silly trucks".
         Cards without it appear under "Normal trucks".
 
         Example:
-        <article class="post-card" data-category="silly" data-title="..." data-file="...">
+        <article class="post-card" data-brand="iveco" data-category="silly" data-title="..." data-file="...">
         ============================================================
         -->
 
         <!-- ==============================Truck01============================== -->
-        <article class="post-card" data-title="Iveco sway" data-file="../img/truck.txt/truck01.txt">
+        <article class="post-card" data-brand="iveco" data-title="Iveco sway" data-file="../img/truck.txt/truck01.txt">
           <img class="post-image" src="../img/truck.img/truck01.png" alt="Truck 01 project" />
           <div class="post-info">
             <div class="post-meta"><span>Truck</span><span>01</span></div>
@@ -61,7 +77,7 @@
         </article>
 
         <!-- ==============================Truck02============================== -->
-        <article class="post-card" data-title="Mercedes Actros 2014" data-file="../img/truck.txt/truck02.txt">
+        <article class="post-card" data-brand="mercedes" data-title="Mercedes Actros 2014" data-file="../img/truck.txt/truck02.txt">
           <img class="post-image" src="../img/truck.img/truck02.png" alt="Truck 02 project" />
           <div class="post-info">
             <div class="post-meta"><span>Truck</span><span>02</span></div>
@@ -72,7 +88,7 @@
         </article>
 
         <!-- ==============================Truck03============================== -->
-        <article class="post-card" data-title="Mercedes Actros 2014" data-file="../img/truck.txt/truck03.txt">
+        <article class="post-card" data-brand="mercedes" data-title="Mercedes Actros 2014" data-file="../img/truck.txt/truck03.txt">
           <img class="post-image" src="../img/truck.img/truck03.png" alt="Truck 03 project" />
           <div class="post-info">
             <div class="post-meta"><span>Truck</span><span>03</span></div>
@@ -92,7 +108,7 @@
         ~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~+~-->
 
         <!-- ~+~+~+~+~+~+~+~+~+~silly-Truck01~+~+~+~+~+~+~+~+~+~ -->
-        <article class="post-card" data-category="silly" data-title="Mercedes mixed" data-file="../img/truck.txt/silly-truck01.txt">
+        <article class="post-card" data-category="silly" data-brand="mercedes" data-title="Mercedes mixed" data-file="../img/truck.txt/silly-truck01.txt">
           <img class="post-image" src="../img/truck.img/silly-truck01.png" alt="Silly Truck 01 project" />
           <div class="post-info">
             <div class="post-meta"><span>Truck [Silly]</span><span>01</span></div>
