@@ -12,6 +12,8 @@
   const codePreview = document.querySelector("#code-preview");
 
   let activeTags = new Set();
+  let activeCategory = "all";
+  const categoryFilter = document.querySelector("#category-filter");
 
   const collectTags = () => {
     const tags = new Set();
@@ -124,7 +126,10 @@
       const matchesSearch = card.textContent.toLowerCase().includes(term);
       const cardTags = card.dataset.tags ? card.dataset.tags.trim().split(/\s+/) : [];
       const matchesTags = activeTags.size === 0 || [...activeTags].every((t) => cardTags.includes(t));
-      const match = matchesSearch && matchesTags;
+      const matchesCategory = activeCategory === "all"
+        || (activeCategory === "silly" && card.dataset.category === "silly")
+        || (activeCategory === "normal" && card.dataset.category !== "silly");
+      const match = matchesSearch && matchesTags && matchesCategory;
       card.hidden = !match;
       if (match) visible += 1;
     });
@@ -132,6 +137,16 @@
   };
 
   buildTagFilter();
+
+  if (categoryFilter) {
+    categoryFilter.addEventListener("click", (e) => {
+      const chip = e.target.closest(".category-chip");
+      if (!chip) return;
+      activeCategory = chip.dataset.cat;
+      categoryFilter.querySelectorAll(".category-chip").forEach((c) => c.classList.toggle("active", c === chip));
+      updateResults();
+    });
+  }
 
   const resetPreview = () => {
     codePreview.classList.remove("open");

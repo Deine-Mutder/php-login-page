@@ -23,6 +23,14 @@
       <div class="project-layout">
         <aside class="project-sidebar">
           <input class="project-search" id="project-search" type="search" placeholder="Search by brand or project name..." />
+          <div>
+            <div class="project-sidebar-label">Truck type</div>
+            <div class="category-filter" id="category-filter">
+              <button class="category-chip active" data-cat="all" type="button">All trucks</button>
+              <button class="category-chip" data-cat="normal" type="button">Normal trucks</button>
+              <button class="category-chip" data-cat="silly" type="button">Silly trucks</button>
+            </div>
+          </div>
         </aside>
         <div class="project-content">
           <div class="project-results" id="project-results"></div>
@@ -30,9 +38,14 @@
         <!--
         ============================================================
         CARD TEMPLATE — copy & paste inside <main class="post-grid">
-        in any of these pages:
-        full-trucks.html / full-trailers.html / truck-parts.html / trailer-parts.html
         Change the 5 values marked with ← CHANGE
+
+        SILLY TRUCKS: add  data-category="silly"  to the <article> tag.
+        The card gets a red LED border and appears under "Silly trucks".
+        Cards without it appear under "Normal trucks".
+
+        Example:
+        <article class="post-card" data-category="silly" data-title="..." data-file="...">
         ============================================================
         -->
 
@@ -65,6 +78,17 @@
             <div class="post-meta"><span>Truck 03</span><span>03</span></div>
             <h2>Truck 03</h2>
             <p>Complete truck project ready for download.</p>
+            <button class="post-open" type="button">Download project</button>
+          </div>
+        </article>
+
+        <!-- ==============================silly-Truck01============================== -->
+        <article class="post-card" data-category="silly" data-title="Silly Truck 01" data-file="../img/truck.txt/silly-truck01.txt">
+          <img class="post-image" src="../img/truck.img/silly-truck01.png" alt="Silly Truck 01 project" />
+          <div class="post-info">
+            <div class="post-meta"><span>Silly Truck 01</span><span>01</span></div>
+            <h2>Silly Truck 01</h2>
+            <p>Complete silly truck project ready for download.</p>
             <button class="post-open" type="button">Download project</button>
           </div>
         </article>

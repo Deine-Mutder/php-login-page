@@ -1038,38 +1038,30 @@ form.sign-in-form {
 /* Community Stats Section */
 .community-stats {
   width: min(1180px, 100%);
-  margin: 0 auto;
-  padding-top: 38px;
+  margin: 64px auto 0;
+  padding-top: 48px;
+  border-top: 1px solid rgba(245, 241, 230, 0.15);
   color: #f5f1e6;
 }
 
 .community-stats-card {
   display: flex;
   align-items: center;
-  gap: 24px;
-  padding: 28px 32px;
-  border: 1px solid rgba(245, 241, 230, 0.24);
+  justify-content: space-between;
+  gap: 32px;
+  padding: 36px 44px;
+  border: 1px solid rgba(245, 241, 230, 0.16);
   border-radius: 20px;
-  background: rgba(20, 24, 22, 0.42);
-  backdrop-filter: blur(18px) saturate(125%);
-  -webkit-backdrop-filter: blur(18px) saturate(125%);
-  box-shadow: inset 0 1px 0 rgba(245, 241, 230, 0.12), 0 18px 40px rgba(0, 0, 0, 0.16);
+  background: linear-gradient(135deg, rgba(20, 24, 22, 0.5) 0%, rgba(20, 24, 22, 0.32) 100%);
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+  box-shadow: inset 0 1px 0 rgba(245, 241, 230, 0.08), 0 12px 32px rgba(0, 0, 0, 0.14);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.community-stats-icon {
-  display: grid;
-  place-items: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background-color: rgba(245, 241, 230, 0.12);
-  border: 1px solid rgba(245, 241, 230, 0.35);
-  flex-shrink: 0;
-}
-
-.community-stats-icon i {
-  font-size: 1.5rem;
-  color: #e9b875;
+.community-stats-card:hover {
+  border-color: rgba(245, 241, 230, 0.28);
+  box-shadow: inset 0 1px 0 rgba(245, 241, 230, 0.12), 0 16px 40px rgba(0, 0, 0, 0.2);
 }
 
 .community-stats-body {
@@ -1109,8 +1101,8 @@ form.sign-in-form {
 }
 
 @media (max-width: 700px) {
-  .community-stats { padding-top: 28px; }
-  .community-stats-card { flex-wrap: wrap; gap: 16px; padding: 22px; }
+  .community-stats { padding-top: 32px; margin-top: 40px; }
+  .community-stats-card { flex-wrap: wrap; gap: 16px; padding: 24px; }
   .community-stats-count { flex-direction: row; align-items: baseline; gap: 8px; }
 }
 
