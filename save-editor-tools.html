@@ -10,7 +10,109 @@
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+    <style>
+      /* GLB Viewer */
+      #glb-viewer-container {
+        position: relative;
+        width: 100%;
+        height: 60vh;
+        background: #0b100f;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      #glb-canvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+        cursor: grab;
+      }
+      #glb-canvas:active { cursor: grabbing; }
+
+      .glb-tooltip {
+        position: absolute;
+        pointer-events: none;
+        background: rgba(11, 16, 15, 0.92);
+        border: 1px solid rgba(233, 184, 117, 0.6);
+        color: #e9b875;
+        padding: 6px 14px;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        white-space: nowrap;
+        opacity: 0;
+        transform: translate(-50%, -135%);
+        transition: opacity 0.15s ease;
+        z-index: 10;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+      .glb-tooltip.visible { opacity: 1; }
+
+      .glb-badge {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        background: rgba(11, 16, 15, 0.82);
+        border: 1px solid rgba(233, 184, 117, 0.45);
+        border-radius: 8px;
+        font-size: 0.7rem;
+        font-family: "Poppins", sans-serif;
+        letter-spacing: 0.08em;
+        color: rgba(245, 241, 230, 0.8);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        z-index: 10;
+      }
+      .glb-badge-prefix {
+        color: #e9b875;
+        font-weight: 700;
+        font-family: "Space Grotesk", monospace;
+      }
+
+      .glb-loading {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        color: rgba(245, 241, 230, 0.7);
+        font-size: 0.85rem;
+        font-family: "Poppins", sans-serif;
+        z-index: 5;
+        transition: opacity 0.3s ease;
+      }
+      .glb-loading.hidden { opacity: 0; pointer-events: none; }
+      .glb-loading i { font-size: 1.8rem; color: #e9b875; }
+
+      .glb-hint {
+        position: absolute;
+        bottom: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: rgba(245, 241, 230, 0.45);
+        font-size: 0.78rem;
+        font-family: "Poppins", sans-serif;
+        z-index: 5;
+        pointer-events: none;
+        text-align: center;
+        white-space: nowrap;
+      }
+    </style>
   </head>
   <body>
     <div class="container dashboard-page">
@@ -78,18 +180,21 @@
             </button>
           </div>
           <div class="modal-body" style="gap: 0;">
-            <model-viewer
-              id="model-viewer-el"
-              src="./img/fixed wheel 04.glb"
-              alt="3D truck model preview"
-              camera-controls
-              auto-rotate
-              shadow-intensity="1"
-              style="width: 100%; height: 60vh; background: #0b100f; border-radius: 12px;"
-            ></model-viewer>
-            <p style="margin-top: 12px; color: var(--muted); font-size: 0.82rem; text-align: center;">
-              Drag to rotate &middot; Scroll to zoom &middot; Right-drag to pan
-            </p>
+            <div id="glb-viewer-container">
+              <canvas id="glb-canvas"></canvas>
+              <div id="glb-tooltip" class="glb-tooltip"></div>
+              <div id="glb-badge" class="glb-badge">
+                <span class="glb-badge-prefix">f_</span>
+                <span>Front parts only are on this img/modelle.glb (because it is a model from an front wheel)</span>
+              </div>
+              <div id="glb-loading" class="glb-loading">
+                <i class="fas fa-spinner fa-spin"></i>
+                <span>Loading model…</span>
+              </div>
+              <div class="glb-hint">
+                Drag to rotate &middot; Scroll to zoom &middot; Hover parts to inspect
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -111,9 +216,11 @@
 
       const openModelViewer = () => {
         modelModal.classList.add("show");
+        window.dispatchEvent(new CustomEvent("glb-viewer-open"));
       };
       const closeModelViewer = () => {
         modelModal.classList.remove("show");
+        window.dispatchEvent(new CustomEvent("glb-viewer-close"));
       };
 
       const modelCard = document.getElementById("tool-model-viewer");
@@ -135,6 +242,294 @@
       hexCard.addEventListener("keydown", (e) => {
         if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openHexConverter(); }
       });
+    </script>
+
+    <!-- Three.js GLB Viewer with hover detection -->
+    <script type="module">
+      import * as THREE from "three";
+      import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+      import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+
+      // --- Mesh name → ETS2 label mapping (names are generic in this GLB) ---
+      const meshNameMap = {
+        "piece_3":    { label: "f,r_tire",  desc: "Tire" },
+        "piece_0001": { label: "f,r_disc",  desc: "Disc" },
+        "piece_0002": { label: "f,r_hub",   desc: "Hub" },
+        "piece_0003": { label: "f,r_nuts", desc: "Nuts" },
+        "piece_1004": { label: "f,r_cover",  desc: "Cover" },
+      };
+
+      function matchPart(name) {
+        return meshNameMap[name] || null;
+      }
+
+      // --- DOM refs ---
+      const container = document.getElementById("glb-viewer-container");
+      const canvas    = document.getElementById("glb-canvas");
+      const tooltip   = document.getElementById("glb-tooltip");
+      const loadingEl = document.getElementById("glb-loading");
+
+      // --- Scene ---
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x0b100f);
+
+      const camera = new THREE.PerspectiveCamera(
+        45,
+        container.clientWidth / container.clientHeight,
+        0.1,
+        1000
+      );
+
+      const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+      // --- Lighting ---
+      scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+
+      const keyLight = new THREE.DirectionalLight(0xffffff, 1.3);
+      keyLight.position.set(5, 10, 7);
+      keyLight.castShadow = true;
+      keyLight.shadow.mapSize.set(2048, 2048);
+      scene.add(keyLight);
+
+      const fillLight = new THREE.DirectionalLight(0xe9b875, 0.35);
+      fillLight.position.set(-5, 3, -5);
+      scene.add(fillLight);
+
+      // --- Shadow ground plane ---
+      const ground = new THREE.Mesh(
+        new THREE.PlaneGeometry(50, 50),
+        new THREE.ShadowMaterial({ opacity: 0.3 })
+      );
+      ground.rotation.x = -Math.PI / 2;
+      ground.position.y = -0.01;
+      ground.receiveShadow = true;
+      scene.add(ground);
+
+      // --- Controls ---
+      const controls = new OrbitControls(camera, canvas);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.08;
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 1.0;
+      controls.minDistance = 1;
+      controls.maxDistance = 20;
+
+      // --- Raycaster + hover state ---
+      const raycaster = new THREE.Raycaster();
+      const pointer   = new THREE.Vector2();
+      let hoveredLabel = null;
+      let hoveredGroup  = [];
+      const meshGroups = new Map();   // label → Mesh[]
+      const allMeshes   = [];          // ALL meshes — interactive
+
+      // --- Load GLB ---
+      const loader = new GLTFLoader();
+      loader.load(
+        "./img/fixed wheel 04.glb",
+        (gltf) => {
+          const model = gltf.scene;
+
+          let meshCount = 0;
+          let matchedCount = 0;
+
+          model.traverse((child) => {
+            if (!child.isMesh) return;
+            meshCount++;
+            child.castShadow = true;
+            child.receiveShadow = true;
+
+            // Clone material so highlight stays isolated per mesh
+            if (Array.isArray(child.material)) {
+              child.material = child.material.map(m => m.clone());
+            } else {
+              child.material = child.material.clone();
+            }
+
+            const def   = matchPart(child.name);
+            const label = def ? def.label : child.name;
+
+            child.userData.partLabel = label;
+            child.userData.partDesc  = def ? def.desc : "(unmatched)";
+
+            // Compute local bounding box for debug logging
+            child.geometry.computeBoundingBox();
+            const bb = child.geometry.boundingBox;
+            const bbSize = new THREE.Vector3();
+            bb.getSize(bbSize);
+            const bbCenter = new THREE.Vector3();
+            bb.getCenter(bbCenter);
+
+            console.log(
+              `[GLB] #${meshCount} name="${child.name}"` +
+              `  size=(${bbSize.x.toFixed(3)}, ${bbSize.y.toFixed(3)}, ${bbSize.z.toFixed(3)})` +
+              `  center=(${bbCenter.x.toFixed(3)}, ${bbCenter.y.toFixed(3)}, ${bbCenter.z.toFixed(3)})` +
+              `  verts=${child.geometry.attributes.position?.count ?? '?'}` +
+              `  → ${label}`
+            );
+
+            if (!meshGroups.has(label)) meshGroups.set(label, []);
+            meshGroups.get(label).push(child);
+            allMeshes.push(child);
+            if (def) matchedCount++;
+          });
+
+          console.log(`[GLB] Total meshes: ${meshCount}, matched: ${matchedCount}`);
+          if (allMeshes.length === 0) {
+            console.warn("[GLB] No meshes found in model!");
+          }
+
+          // Auto-scale & center
+          const box = new THREE.Box3().setFromObject(model);
+          const size = box.getSize(new THREE.Vector3());
+          const center = box.getCenter(new THREE.Vector3());
+          const maxDim = Math.max(size.x, size.y, size.z) || 1;
+          const scale = 3 / maxDim;
+          model.scale.setScalar(scale);
+          model.position.sub(center.multiplyScalar(scale));
+
+          scene.add(model);
+
+          // Position camera to frame the model
+          const finalBox = new THREE.Box3().setFromObject(model);
+          const finalSize = finalBox.getSize(new THREE.Vector3());
+          const dist = Math.max(finalSize.x, finalSize.y, finalSize.z) * 1.8;
+          camera.position.set(0, finalSize.y * 0.25, dist);
+          controls.target.set(0, 0, 0);
+          controls.update();
+
+          loadingEl.classList.add("hidden");
+        },
+        undefined,
+        (err) => {
+          console.error("[GLB] load error:", err);
+          loadingEl.innerHTML =
+            '<i class="fas fa-exclamation-triangle"></i><span>Failed to load model</span>';
+        }
+      );
+
+      // --- Hover highlight (emissive + color fallback) ---
+      const HIGHLIGHT_COLOR = 0xe9b875;
+      const HIGHLIGHT_INTENSITY = 0.7;
+
+      function setHighlight(mesh, on) {
+        const mats = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
+        mats.forEach((m) => {
+          if (!m) return;
+          if (on) {
+            if (m.emissive) {
+              if (mesh.userData.origEmissive === undefined) {
+                mesh.userData.origEmissive = m.emissive.getHex();
+                mesh.userData.origEmissiveIntensity = m.emissiveIntensity ?? 0;
+              }
+              m.emissive.setHex(HIGHLIGHT_COLOR);
+              m.emissiveIntensity = HIGHLIGHT_INTENSITY;
+            } else if (m.color) {
+              if (mesh.userData.origColor === undefined) {
+                mesh.userData.origColor = m.color.getHex();
+              }
+              m.color.setHex(HIGHLIGHT_COLOR);
+            }
+          } else {
+            if (m.emissive && mesh.userData.origEmissive !== undefined) {
+              m.emissive.setHex(mesh.userData.origEmissive);
+              m.emissiveIntensity = mesh.userData.origEmissiveIntensity;
+            } else if (m.color && mesh.userData.origColor !== undefined) {
+              m.color.setHex(mesh.userData.origColor);
+            }
+          }
+        });
+      }
+
+      function clearHighlight() {
+        hoveredGroup.forEach((mesh) => setHighlight(mesh, false));
+        hoveredGroup = [];
+      }
+
+      function checkHover() {
+        raycaster.setFromCamera(pointer, camera);
+        const hits = raycaster.intersectObjects(allMeshes, false);
+
+        if (hits.length > 0) {
+          const label = hits[0].object.userData.partLabel;
+          if (label !== hoveredLabel) {
+            clearHighlight();
+            const group = meshGroups.get(label);
+            if (group) {
+              group.forEach((mesh) => setHighlight(mesh, true));
+              hoveredGroup = group;
+            }
+            hoveredLabel = label;
+            tooltip.textContent = label;
+            tooltip.classList.add("visible");
+            controls.autoRotate = false;
+          }
+        } else if (hoveredLabel !== null) {
+          clearHighlight();
+          hoveredLabel = null;
+          tooltip.classList.remove("visible");
+          controls.autoRotate = true;
+        }
+      }
+
+      // --- Pointer tracking ---
+      canvas.addEventListener("pointermove", (e) => {
+        const rect = canvas.getBoundingClientRect();
+        pointer.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+        pointer.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+        tooltip.style.left = (e.clientX - rect.left) + "px";
+        tooltip.style.top  = (e.clientY - rect.top) + "px";
+      });
+
+      canvas.addEventListener("pointerleave", () => {
+        if (hoveredLabel !== null) {
+          clearHighlight();
+          hoveredLabel = null;
+          tooltip.classList.remove("visible");
+          controls.autoRotate = true;
+        }
+      });
+
+      // --- Animation loop ---
+      let running = false;
+      function animate() {
+        if (!running) return;
+        requestAnimationFrame(animate);
+        checkHover();
+        controls.update();
+        renderer.render(scene, camera);
+      }
+
+      function onResize() {
+        const w = container.clientWidth;
+        const h = container.clientHeight;
+        if (w === 0 || h === 0) return;
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+        renderer.setSize(w, h);
+      }
+
+      // --- Modal open / close integration ---
+      window.addEventListener("glb-viewer-open", () => {
+        onResize();
+        if (!running) {
+          running = true;
+          animate();
+        }
+      });
+
+      window.addEventListener("glb-viewer-close", () => {
+        running = false;
+        clearHighlight();
+        hoveredLabel = null;
+        tooltip.classList.remove("visible");
+        controls.autoRotate = true;
+      });
+
+      new ResizeObserver(onResize).observe(container);
     </script>
   </body>
 </html>
