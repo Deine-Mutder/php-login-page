@@ -36,7 +36,6 @@
 .tool-detail { display: flex; flex-direction: column; gap: 48px; padding-top: 20px; }
 .tool-detail-section { display: flex; flex-direction: column; gap: 16px; }
 .tool-detail-label { color: rgba(243,240,232,.5); font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; }
-.tool-detail-image { width: 100%; max-width: 600px; border: 1px solid rgba(243,240,232,.2); border-radius: 3px; background: rgba(12,18,17,.56); }
 .tool-detail-steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .tool-detail-step h3 { margin: 0 0 12px; font-family: "Space Grotesk", sans-serif; font-size: 1.1rem; font-weight: 500; color: #e9b875; }
 .tool-detail-step .tool-detail-image { max-width: 100%; }

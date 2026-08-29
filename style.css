@@ -1033,7 +1033,6 @@ form.sign-in-form {
 .project-status { color: #e9b875; }
 .project-card h3 { margin: 9px 0 8px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.55rem, 2.6vw, 2.45rem); font-weight: 400; line-height: 0.98; }
 .project-card p { max-width: 300px; color: rgba(245, 241, 230, 0.72); font-size: 0.78rem; line-height: 1.5; }
-.project-arrow { position: absolute; right: 20px; bottom: 20px; display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid rgba(245, 241, 230, 0.42); border-radius: 50%; color: #f5f1e6; font-size: 0.75rem; }
 
 /* Editor Prompt Section */
 .editor-prompt {
@@ -1843,4 +1842,56 @@ form.sign-in-form {
   background-color: rgba(5, 10, 9, 0.48);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+}
+
+/* Container-Styling für bessere Abhebung */
+.about-section {
+  background: rgba(255, 255, 255, 0.05); /* Leichter transparenter Hintergrund */
+  border-left: 4px solid #5865F2; /* Akzentlinie am linken Rand (Discord-Farbe) */
+  padding: 15px 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+/* Textgestaltung */
+.about-text {
+  font-size: 1.1rem;
+  color: #ffffff; /* Weiches Weiß statt Grau */
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.about-subtext {
+  font-size: 0.95rem;
+  color: #cccccc;
+  margin-bottom: 15px;
+}
+
+/* Icon-Styling */
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  font-size: 1.8rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Specific styling for the icons using fa-brands */
+.social-icon .fa-discord,
+.social-icon .fa-github {
+  display: inline-block;
+}
+
+.social-icon.discord:hover {
+  color: #5865F2; /* Discord Blau beim Drüberfahren */
+  transform: translateY(-3px);
+}
+
+.social-icon.github:hover {
+  color: #2ea44f; /* GitHub Grün/Akzent beim Drüberfahren */
+  transform: translateY(-3px);
 }
